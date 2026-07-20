@@ -1,0 +1,82 @@
+<section class="hero hud-field error-page">
+
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner tr"></div>
+    <div class="hud-corner bl"></div>
+    <div class="hud-corner br"></div>
+
+    <div class="hud-coord tl">
+        SYSTEM STATUS // CRITICAL
+    </div>
+
+    <div class="hud-coord tr">
+        ERROR CODE : RM-500
+    </div>
+
+    <div class="container">
+
+        <div class="error-content">
+
+            <span class="eyebrow on-dark">
+                INTERNAL SYSTEM FAILURE
+            </span>
+
+            <h1 class="error-code">
+                500
+            </h1>
+
+            <h2>
+                Mission Control Temporarily Offline
+            </h2>
+
+            <p>
+                Our command systems have encountered an unexpected failure while
+                processing your request.
+                The engineering team has been notified and is working to restore
+                full operational capability.
+            </p>
+
+            <div class="tag">
+                STATUS : RECOVERY IN PROGRESS
+            </div>
+
+            <div class="hero-cta">
+
+                <a
+                    href="/"
+                    class="btn btn-primary"
+                >
+                    Return to Headquarters
+                </a>
+
+                <a
+                    href="/contact"
+                    class="btn btn-ghost"
+                >
+                    Report the Incident
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<% if (error) { %>
+
+<hr style="margin:60px 0; opacity:.2;">
+
+<pre style="
+    text-align:left;
+    white-space:pre-wrap;
+    overflow:auto;
+    font-size:.85rem;
+    color:#8FE3A8;
+    background:#111;
+    padding:20px;
+    border-radius:8px;
+"><%= error.stack %></pre>
+
+<% } %>

@@ -1,0 +1,68 @@
+<header class="nav" id="nav">
+
+    <div class="container">
+
+        <a class="nav-logo" href="/">
+            <span class="chip">
+                <img
+                    src="/images/rainManLogo.png"
+                    alt="RainMan"
+                >
+            </span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a class="<%= currentPage === 'home' ? 'active' : '' %>" href="/">
+                Home
+            </a>
+
+            <a class="<%= currentPage === 'team' ? 'active' : '' %>" href="/team">
+                Team
+            </a>
+
+            <a class="<%= currentPage === 'methodology' ? 'active' : '' %>" href="/methodology">
+                Methodology
+            </a>
+
+            <a class="<%= currentPage === 'services' ? 'active' : '' %>" href="/services">
+                Services
+            </a>
+
+            <a class="<%= currentPage === 'products' ? 'active' : '' %>" href="/products">
+                Products
+            </a>
+
+            <a class="<%= currentPage === 'resources' ? 'active' : '' %>" href="/resources">
+                Resources
+            </a>
+
+            <a class="<%= currentPage === 'contact' ? 'active' : '' %>" href="/contact">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="nav-cta">
+
+            <a
+                class="btn btn-ghost btn-sm"
+                href="/contact"
+            >
+                Request a briefing
+            </a>
+
+        </div>
+
+        <button
+            class="nav-toggle"
+            aria-label="Menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
