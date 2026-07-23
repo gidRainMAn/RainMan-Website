@@ -1,0 +1,70 @@
+<section class="blog-hero">
+
+    <div class="container">
+
+        <div class="eyebrow">
+
+            <%= blog.category.name %>
+
+        </div>
+
+        <h1>
+
+            <%= blog.title %>
+
+        </h1>
+
+        <p class="blog-excerpt">
+
+            <%= blog.excerpt %>
+
+        </p>
+
+        <div class="blog-meta">
+
+            RainMan
+
+            •
+
+            <%= blog.readingTime %> min read
+
+            •
+
+            <%= new Date(blog.publishedAt).toDateString() %>
+
+        </div>
+
+    </div>
+
+</section>
+
+<% if(blog.bannerImage){ %>
+
+<section>
+
+    <div class="container">
+
+        <img
+            src="<%= blog.bannerImage %>"
+            class="blog-banner"
+            alt="<%= blog.title %>">
+
+    </div>
+
+</section>
+
+<% } %>
+
+<section>
+
+    <div class="container">
+
+        <article class="blog-content">
+
+            <%- blog.contentHtml %>
+
+        </article>
+
+    </div>
+
+</section>

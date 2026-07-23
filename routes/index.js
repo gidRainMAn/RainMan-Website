@@ -12,7 +12,7 @@ router.get("/products", pageController.products);
 router.get("/resources", pageController.resources);
 router.get("/contact", pageController.contact);
 
-router.get("/resources", resourcesController.index);
+// router.get("/resources", resourcesController.index);
 router.get("/resources/:slug",resourcesController.detail);
 
 module.exports = router;

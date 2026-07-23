@@ -74,25 +74,39 @@
       <div class="eyebrow">Field notes</div>
       <h2>Latest thinking from the RainMan team</h2>
     </div>
-    <div class="blog-card"><div><h4>The ABCs of MMM: Marketing Mix Models</h4><p>What marketing mix modelling is, the data it needs, and how it quantifies ROI to guide resource allocation.</p></div><span class="byline">Krishna Kumar CS</span></div>
-<div class="blog-card"><div><h4>Measuring Ad Effectiveness and Applauding Ad Creativity</h4><p>Why judging creativity (“De Canne”) needs to sit alongside measuring effectiveness (“De Carte”), not before it.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Catchment Area Analysis for Retail Business</h4><p>How defining the right catchment area sharpens site selection and local marketing for retail chains.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Enhancing Market Mix Modelling With Time Series Trends</h4><p>Why layering time-series trend analysis onto MMM improves the read on structural, not just marketing-driven, sales movement.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Adapting Marketing Mix Models for a Post-COVID World</h4><p>How structural breaks and shifting consumer behaviour changed the assumptions models need to make.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>How Does One Evaluate the Success of Sponsorship?</h4><p>Framing sponsorship ROI in the same quantitative terms as any other marketing input.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Why Marketing Companies Fail to Use Their Data Assets Effectively</h4><p>Common gaps between the data organisations collect and the decisions it actually informs.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>How MMM Can Optimize Spends Between Online and Offline Media</h4><p>Using modelled ROI, not habit, to set the online/offline split.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>How MMM Helped Improve Sales of a Major FMCG Brand by 8%</h4><p>A short walkthrough of the inputs and reallocation that delivered the lift.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>How MMM Improves Media Effectiveness, Both Online and Offline</h4><p>Where deep-dive attribution changes a media plan versus a top-line mix view.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>How MMM Helps Optimize Pricing Decisions for FMCG Players</h4><p>Connecting price elasticity work back into the broader marketing mix model.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>How MMM Connects Brand Track Data to Sales</h4><p>Linking continuous brand-health tracking directly to modelled sales outcomes.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Is There a Right and Royal RoAS?</h4><p>Why a single RoAS benchmark can mislead, and what to look at instead.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Taking Sales Beyond Salesmanship</h4><p>How analytics reshapes what a high-performing sales organisation looks like.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Why Just Eyeballs Are Not Good Enough for Media Planning</h4><p>The case for outcome-based media metrics over reach and impressions alone.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Why Have Brands Become Weaker in the Digital Era?</h4><p>How fragmentation and short-termism have eroded brand-building discipline.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>The Multiplying Issues With Digital Attribution as We Know It</h4><p>Why last-click and multi-touch attribution are increasingly unreliable, and what to use instead.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>Are Marketers Underutilizing the Power of Advertising?</h4><p>Evidence that long-term brand advertising is often under-valued relative to short-term activation.</p></div><span class="byline">RainMan</span></div>
-<div class="blog-card"><div><h4>How Can Brands Deal With Inflation in Input Cost?</h4><p>Using price-sensitivity and mix modelling to protect margin when costs rise.</p></div><span class="byline">RainMan</span></div>
+
+      <% if (blogs && blogs.length) { %>
+
+      <% blogs.forEach(blog => { %>
+
+          <div class="blog-card">
+
+              <div>
+                <a href="/resources/<%= blog.slug %>" class="blog-card">
+
+                    <h3><%= blog.title %></h3>
+
+                    <p><%= blog.excerpt %></p>
+
+                </a>
+
+              </div>
+
+              <span class="byline">
+
+                  RainMan
+
+              </span>
+
+          </div>
+
+      <% }) %>
+
+  <% } else { %>
+
+      <p>No articles published yet.</p>
+
+  <% } %>
   </div>
 </section>
 

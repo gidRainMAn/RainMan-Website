@@ -110,13 +110,12 @@ exports.editPage = async (req, res, next) => {
         res.render("admin/blogs/edit", {
 
             layout: "layouts/admin",
-
+            
             title: "Edit Blog",
-
+            
             blog,
-
-            categories
-
+            categories,
+            errors: {}
         });
 
     } catch (error) {

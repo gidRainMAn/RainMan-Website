@@ -1,4 +1,5 @@
 // controllers/pageController.js
+const blogService = require("../services/blog.service");
 
 exports.home = (req, res) => {
     res.render("pages/home", {
@@ -7,6 +8,7 @@ exports.home = (req, res) => {
             "RainMan helps organizations maximize marketing ROI through Marketing Mix Modeling, AI, and Decision Intelligence.",
         currentPage: "home",
         canonical: "/",
+        layout: "layouts/main",
         robots: "index,follow",
     });
 };
@@ -30,6 +32,7 @@ exports.team = (req, res) => {
             "Meet the experts behind RainMan's marketing analytics and decision intelligence solutions.",
         currentPage: "team",
         canonical: "/team",
+        layout: "layouts/main",
         robots: "index,follow",
     });
 };
@@ -67,15 +70,29 @@ exports.products = (req, res) => {
     });
 };
 
-exports.resources = (req, res) => {
-    res.render("pages/resources", {
-        title: "Resources | RainMan",
-        description:
-            "Browse blogs, case studies, whitepapers, and thought leadership from RainMan.",
-        currentPage: "resources",
-        canonical: "/resources",
-        robots: "index,follow",
-    });
+exports.resources = async (req, res, next) => {
+
+    try {
+
+        const blogs = await blogService.getPublishedBlogs();
+
+        res.render("pages/resources", {
+            title: "Resources | RainMan",
+            description:
+                "Browse blogs, case studies, whitepapers, and thought leadership from RainMan.",
+            currentPage: "resources",
+            canonical: "/resources",
+            robots: "index,follow",
+
+            blogs
+        });
+
+    } catch (error) {
+
+        next(error);
+
+    }
+
 };
 
 exports.contact = (req, res) => {

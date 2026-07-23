@@ -129,3 +129,7 @@ exports.getFeaturedBlogs = async () => {
     return blogRepository.getFeatured();
 
 };
+
+exports.getPublishedBlogBySlug = (slug) => {
+    return blogRepository.getPublishedBySlug(slug);
+};

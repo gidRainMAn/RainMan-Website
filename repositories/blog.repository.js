@@ -215,3 +215,20 @@ exports.getFeatured = async () => {
     });
 
 };
+
+exports.getPublishedBySlug = async (slug) => {
+
+    return prisma.blog.findFirst({
+
+        where: {
+            slug,
+            status: "PUBLISHED"
+        },
+
+        include: {
+            category: true
+        }
+
+    });
+
+};
