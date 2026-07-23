@@ -1,0 +1,145 @@
+<table class="blog-table">
+
+    <thead>
+
+        <tr>
+
+            <th>Banner</th>
+
+            <th>Title</th>
+
+            <th>Category</th>
+
+            <th>Status</th>
+
+            <th>Published</th>
+
+            <th>★</th>
+
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    <% blogs.forEach(blog=>{ %>
+
+        <tr>
+
+            <td>
+
+                <img
+                    src="<%= blog.bannerImage || '/images/no-image.png' %>"
+                >
+
+            </td>
+
+            <td>
+
+                <strong><%= blog.title %></strong>
+
+            </td>
+
+            <td>
+
+                <%= blog.category.name %>
+
+            </td>
+
+            <td>
+
+                <span class="status <%= blog.status %>">
+
+                    <%= blog.status %>
+
+                </span>
+
+            </td>
+
+            <td>
+
+                <%= blog.publishedAt ? blog.publishedAt.toLocaleDateString() : "--" %>
+
+            </td>
+
+            <td>
+
+                <%= blog.featured ? "⭐" : "" %>
+
+            </td>
+
+            <td>
+
+                <div class="actions">
+
+                    <a
+                        href="/resources/<%= blog.slug %>"
+                        target="_blank"
+                        class="btn-sm"
+                    >
+                        Preview
+                    </a>
+
+                    <a
+                        href="/admin/blogs/edit/<%= blog.id %>"
+                        class="btn-sm primary"
+                    >
+                        Edit
+                    </a>
+
+                    <form
+                        action="/admin/blogs/status/<%= blog.id %>"
+                        method="POST"
+                        style="display:inline;"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="status"
+                            value="<%= blog.status === 'PUBLISHED' ? 'ARCHIVED' : 'PUBLISHED' %>"
+                        >
+
+                        <button
+                            class="btn-sm success"
+                            type="submit"
+                        >
+
+                            <%= blog.status === "PUBLISHED"
+                                ? "Archive"
+                                : "Publish" %>
+
+                        </button>
+
+                    </form>
+
+                    <form
+                        action="/admin/blogs/delete/<%= blog.id %>"
+                        method="POST"
+                        style="display:inline;"
+                        onsubmit="return confirm('Delete this blog?');"
+                    >
+
+                        <button
+                            class="btn-sm danger"
+                            type="submit"
+                        >
+
+                            Delete
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </td>
+
+        </tr>
+
+    <% }) %>
+
+    </tbody>
+
+</table>

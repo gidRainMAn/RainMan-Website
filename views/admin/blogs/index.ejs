@@ -1,0 +1,73 @@
+<div class="toolbar">
+
+    <h1>Blogs</h1>
+
+    <a
+        href="/admin/blogs/create"
+        class="btn"
+    >
+
+        + Create Blog
+
+    </a>
+
+</div>
+
+
+<form
+    method="GET"
+    class="filters"
+>
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Search..."
+        value="<%= filters.search || '' %>"
+    >
+
+    <select name="status">
+
+        <option value="ALL">All Status</option>
+
+        <option
+            value="DRAFT"
+            <%= filters.status==="DRAFT" ? "selected" : "" %>>
+            Draft
+        </option>
+
+        <option
+            value="PUBLISHED"
+            <%= filters.status==="PUBLISHED" ? "selected" : "" %>>
+            Published
+        </option>
+
+        <option
+            value="ARCHIVED"
+            <%= filters.status==="ARCHIVED" ? "selected" : "" %>>
+            Archived
+        </option>
+
+    </select>
+
+    <button>
+
+        Search
+
+    </button>
+
+</form>
+
+<% if(blogs.length===0){ %>
+
+    <div class="empty">
+
+        No blogs found.
+
+    </div>
+
+<% } else { %>
+
+    <%- include("partials/table", { blogs }) %>
+
+<% } %>

@@ -5,9 +5,12 @@ const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
 const expressLayouts = require("express-ejs-layouts");
+const session = require("express-session");
 
 // Route Imports
 const indexRoutes = require("./routes");
+const adminRoutes = require("./routes/admin.routes");
+
 
 // Load Environment Variables
 dotenv.config();
@@ -53,11 +56,29 @@ app.use((req, res, next) => {
 });
 
 // ==========================
+// Session Configuration      
+// ==========================
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            secure: false,
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000
+        }
+    })
+);
+
+
+// ==========================
 // Routes
 // ==========================
 
 app.use("/", indexRoutes);
 
+app.use("/admin", adminRoutes);
 // ==========================
 // 404 Page - Page Not Found
 // ==========================

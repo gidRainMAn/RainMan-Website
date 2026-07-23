@@ -1,0 +1,212 @@
+<h1>
+    <%= blog ? "Edit Blog" : "Create Blog" %>
+</h1>
+
+<form
+    action="<%= action %>"
+    method="POST"
+    enctype="multipart/form-data"
+>
+
+    <!-- Title -->
+
+    <div class="form-group">
+
+        <label>Title</label>
+
+        <input
+            type="text"
+            name="title"
+            value="<%= blog?.title || '' %>"
+            required
+        >
+
+    </div>
+
+    <!-- Slug -->
+
+    <div class="form-group">
+
+        <label>Slug</label>
+
+        <input
+            type="text"
+            name="slug"
+            value="<%= blog?.slug || '' %>"
+        >
+
+        <small>
+            Leave blank to auto-generate.
+        </small>
+
+    </div>
+
+    <!-- Excerpt -->
+
+    <div class="form-group">
+
+        <label>Excerpt</label>
+
+        <textarea
+            name="excerpt"
+            rows="4"
+            required
+        ><%= blog?.excerpt || '' %></textarea>
+
+    </div>
+
+    <!-- Banner -->
+
+    <div class="form-group">
+
+        <label>Banner Image</label>
+
+        <input
+            type="file"
+            name="banner"
+            accept="image/*"
+        >
+
+
+        <% if(blog?.bannerImage){ %>
+
+            <div class="current-banner">
+
+                <p>Current Banner</p>
+
+                <img
+                    src="<%= blog.bannerImage %>"
+                    alt="Current Banner"
+                    class="banner-preview"
+                >
+
+            </div>
+
+        <% } %>
+
+    </div>
+
+    <!-- Category -->
+
+    <div class="form-group">
+
+        <label>Category</label>
+
+        <select
+            name="categoryId"
+            required
+        >
+
+            <% categories.forEach(category=>{ %>
+
+                <option
+                    value="<%= category.id %>"
+
+                    <%= blog?.categoryId===category.id ? "selected" : "" %>>
+
+                    <%= category.name %>
+
+                </option>
+
+            <% }) %>
+
+        </select>
+
+    </div>
+
+    <!-- Featured -->
+
+    <div class="form-group checkbox">
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="featured"
+                value="true"
+
+                <%= blog?.featured ? "checked" : "" %>
+            >
+
+            Featured Blog
+
+        </label>
+
+    </div>
+
+    <!-- SEO -->
+
+    <h3>SEO</h3>
+
+    <div class="form-group">
+
+        <label>SEO Title</label>
+
+        <input
+            type="text"
+            name="seoTitle"
+            value="<%= blog?.seoTitle || '' %>"
+        >
+
+    </div>
+
+    <div class="form-group">
+
+        <label>SEO Description</label>
+
+        <textarea
+            name="seoDescription"
+            rows="3"
+        ><%= blog?.seoDescription || '' %></textarea>
+
+    </div>
+
+    <!-- Content -->
+
+    <h3>Content</h3>
+
+    <div class="form-group">
+
+        <label>Content</label>
+
+        <div id="editor">
+            <%- blog?.contentHtml || "" %>
+        </div>
+
+        <textarea
+            id="contentHtml"
+            name="contentHtml"
+            hidden
+        ><%= blog?.contentHtml || "" %></textarea>
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="form-actions">
+
+        <button
+            type="submit"
+            name="status"
+            value="DRAFT"
+            class="btn secondary"
+        >
+
+            Save Draft
+
+        </button>
+
+        <button
+            type="submit"
+            name="status"
+            value="PUBLISHED"
+            class="btn"
+        >
+
+            Publish
+
+        </button>
+
+    </div>
+
+</form>

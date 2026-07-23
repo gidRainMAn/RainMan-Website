@@ -1,0 +1,52 @@
+<article class="blog-card">
+
+    <% if(blog.bannerImage){ %>
+
+        <a href="/resources/<%= blog.slug %>">
+
+            <img
+                src="<%= blog.bannerImage %>"
+                alt="<%= blog.title %>"
+            >
+
+        </a>
+
+    <% } %>
+
+    <div class="blog-body">
+
+        <span class="category">
+
+            <%= blog.category.name %>
+
+        </span>
+
+        <h2>
+
+            <a href="/resources/<%= blog.slug %>">
+
+                <%= blog.title %>
+
+            </a>
+
+        </h2>
+
+        <p>
+
+            <%= blog.excerpt %>
+
+        </p>
+
+        <div class="meta">
+
+            <span>
+
+                <%= blog.readingTime || 5 %> min read
+
+            </span>
+
+        </div>
+
+    </div>
+
+</article>

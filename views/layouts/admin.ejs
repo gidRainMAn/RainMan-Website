@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>RainMan CMS</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/admin.css"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <%- include("../partials/admin-sidebar") %>
+
+    <main class="admin-content">
+
+        <%- body %>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script>
+    <script src="/js/blog-editor.js"></script>
+</body>
+
+</html>

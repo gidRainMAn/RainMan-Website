@@ -1,0 +1,35 @@
+<section class="resources-hero">
+
+    <div class="container">
+
+        <h1>Resources</h1>
+
+        <p>
+            Insights, articles and thought leadership from RainMan.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <% if(!blogs.length){ %>
+
+        <p>No resources available.</p>
+
+    <% } else { %>
+
+        <div class="blog-grid">
+
+            <% blogs.forEach(blog=>{ %>
+
+                <%- include("partials/blog-card",{blog}) %>
+
+            <% }) %>
+
+        </div>
+
+    <% } %>
+
+</section>

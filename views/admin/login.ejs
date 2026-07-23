@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RainMan CMS Login</title>
+
+    <style>
+
+        html,
+        body{
+            height:100%;
+            margin:0;
+        }
+
+        body{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .login-wrapper{
+            flex:1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            /* Push below the fixed navbar */
+            padding-top:120px;
+
+            /* Prevent touching the footer */
+            padding-bottom:60px;
+        }
+
+        .login-card{
+
+            width:420px;
+
+            background:#fff;
+
+            padding:40px;
+
+            border-radius:8px;
+
+            box-shadow:0 8px 30px rgba(0,0,0,.12);
+
+        }
+
+        .login-card h2{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .login-card input{
+
+            width:100%;
+            padding:12px;
+
+            box-sizing:border-box;
+
+            margin-top:6px;
+
+            margin-bottom:18px;
+
+        }
+
+        .login-card button{
+
+            width:100%;
+
+            padding:14px;
+
+            cursor:pointer;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="login-wrapper">
+
+<div class="login-card">
+
+<h2>RainMan CMS</h2>
+
+<% if (typeof error !== 'undefined' && error) { %>
+
+<p style="color:red"><%= error %></p>
+
+<% } %>
+
+<form method="POST" action="/admin/login">
+
+<label>Email</label>
+
+<input
+type="email"
+name="email"
+required
+>
+
+<label>Password</label>
+
+<input
+type="password"
+name="password"
+required
+>
+
+<button type="submit">
+
+Login
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

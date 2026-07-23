@@ -1,0 +1,41 @@
+<section class="container">
+
+    <article class="blog-detail">
+
+        <p class="category">
+
+            <%= blog.category.name %>
+
+        </p>
+
+        <h1>
+
+            <%= blog.title %>
+
+        </h1>
+
+        <p class="excerpt">
+
+            <%= blog.excerpt %>
+
+        </p>
+
+        <% if(blog.bannerImage){ %>
+
+            <img
+                class="banner"
+                src="<%= blog.bannerImage %>"
+                alt="<%= blog.title %>"
+            >
+
+        <% } %>
+
+        <div class="content">
+
+            <%- blog.contentHtml %>
+
+        </div>
+
+    </article>
+
+</section>
