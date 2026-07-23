@@ -9,6 +9,11 @@ const blogController = require("../controllers/admin/blog.controller");
 const authMiddleware = require("../middleware/auth.middleware");
 const upload = require("../config/multer");
 
+const {
+    validateCreateBlog,
+    validateUpdateBlog
+} = require("../middleware/validation/blog.validation");
+
 console.log("Auth:", authController);
 console.log("Dashboard:", dashboardController);
 console.log("Blog:", blogController);
@@ -56,6 +61,7 @@ router.get(
 router.post(
     "/blogs/create",
     upload.single("banner"),
+    validateCreateBlog,
     blogController.create
 );
 
@@ -67,6 +73,8 @@ router.get(
 
 router.post(
     "/blogs/edit/:id",
+    upload.single("banner"),
+    validateUpdateBlog,
     blogController.update
 );
 

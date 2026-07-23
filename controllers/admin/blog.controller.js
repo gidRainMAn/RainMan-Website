@@ -1,4 +1,5 @@
 const blogService = require("../../services/blog.service");
+const { validationResult } = require("express-validator");
 
 // =====================================
 // Blog List
@@ -41,7 +42,9 @@ exports.createPage = async (req, res, next) => {
         res.render("admin/blogs/create", {
             layout: "layouts/admin",
             title: "Create Blog",
-            categories
+            categories,
+            blog: null,
+            errors: {}
         });
 
     } catch (error) {
@@ -57,6 +60,22 @@ exports.createPage = async (req, res, next) => {
 exports.create = async (req, res, next) => {
 
     try {
+        const errors = validationResult(req);
+        console.log(errors.array());
+        if (!errors.isEmpty()) {
+
+            const categories = await blogService.getCategories();
+
+            return res.status(400).render("admin/blogs/create", {
+                layout: "layouts/admin",
+                title: "Create Blog",
+                categories,
+                errors: errors.mapped(),
+                blog: req.body,
+                debug: true
+            });
+
+        }
 
         if (req.file) {
             req.body.bannerImage = "/uploads/blogs/banners/" + req.file.filename;

@@ -194,6 +194,40 @@ body{
 
 }
 
+.error {
+    display: block;
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.form-group input.error-input,
+.form-group textarea.error-input,
+.form-group select.error-input {
+    border-color: #dc2626;
+}
+
 /* =========================================== */
 /* Table / Action */
 /* =========================================== */

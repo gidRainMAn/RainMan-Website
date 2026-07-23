@@ -1,3 +1,6 @@
+<%
+    errors = errors || {};
+%>
 <h1>
     <%= blog ? "Edit Blog" : "Create Blog" %>
 </h1>
@@ -18,9 +21,18 @@
             type="text"
             name="title"
             value="<%= blog?.title || '' %>"
-            required
+            class="<%= errors.title ? 'error-input' : '' %>"
         >
 
+        <% if(errors.title){ %>
+
+            <small class="error">
+
+                <%= errors.title.msg %>
+
+            </small>
+
+        <% } %>
     </div>
 
     <!-- Slug -->
@@ -50,8 +62,14 @@
         <textarea
             name="excerpt"
             rows="4"
-            required
+            class="<%= errors.excerpt ? 'error-input' : '' %>"
         ><%= blog?.excerpt || '' %></textarea>
+
+        <% if (errors.excerpt) { %>
+            <small class="error">
+                <%= errors.excerpt.msg %>
+            </small>
+        <% } %>
 
     </div>
 
@@ -94,22 +112,26 @@
 
         <select
             name="categoryId"
-            required
+            class="<%= errors.categoryId ? 'error-input' : '' %>"
         >
+            <option value="">
+                Select Category
+            </option>
+            <% categories.forEach(category => { %>
 
-            <% categories.forEach(category=>{ %>
-
-                <option
-                    value="<%= category.id %>"
-
-                    <%= blog?.categoryId===category.id ? "selected" : "" %>>
-
-                    <%= category.name %>
-
-                </option>
+            <option
+                value="<%= category.id %>"
+                <%= blog?.categoryId === category.id ? "selected" : "" %>
+            >
+                <%= category.name %>
+            </option>
 
             <% }) %>
-
+            <% if (errors.categoryId) { %>
+                <small class="error">
+                    <%= errors.categoryId.msg %>
+                </small>
+            <% } %>
         </select>
 
     </div>
@@ -146,7 +168,14 @@
             type="text"
             name="seoTitle"
             value="<%= blog?.seoTitle || '' %>"
+            class="<%= errors.seoTitle ? 'error-input' : '' %>"
         >
+
+        <% if (errors.seoTitle) { %>
+            <small class="error">
+                <%= errors.seoTitle.msg %>
+            </small>
+        <% } %>
 
     </div>
 
@@ -157,7 +186,14 @@
         <textarea
             name="seoDescription"
             rows="3"
+            class="<%= errors.seoDescription ? 'error-input' : '' %>"
         ><%= blog?.seoDescription || '' %></textarea>
+
+        <% if (errors.seoDescription) { %>
+            <small class="error">
+                <%= errors.seoDescription.msg %>
+            </small>
+        <% } %>
 
     </div>
 
@@ -177,7 +213,14 @@
             id="contentHtml"
             name="contentHtml"
             hidden
+            class="<%= errors.contentHtml ? 'error-input' : '' %>"
         ><%= blog?.contentHtml || "" %></textarea>
+
+        <% if (errors.contentHtml) { %>
+            <small class="error">
+                <%= errors.contentHtml.msg %>
+            </small>
+        <% } %>
 
     </div>
 
