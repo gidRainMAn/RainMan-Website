@@ -368,3 +368,47 @@ window.addEventListener('scroll', () => {
 
   people.forEach((p) => io.observe(p));
 })();
+
+// ── Services split blocks — alternating slide-in from left/right on scroll ──
+(() => {
+  const splits = document.querySelectorAll('.split');
+  if (!splits.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    splits.forEach((s) => s.classList.add('in-view'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -80px 0px' });
+
+  splits.forEach((s) => io.observe(s));
+})();
+
+// ── Methodology list — alternating slide-in from left/right on scroll ──
+(() => {
+  const items = document.querySelectorAll('.method-item');
+  if (!items.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((it) => it.classList.add('in-view'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -80px 0px' });
+
+  items.forEach((it) => io.observe(it));
+})();

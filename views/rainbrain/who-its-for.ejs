@@ -1,0 +1,349 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who RainBrain is for — brands, agencies &amp; consultants | RainMan</title>
+<meta name="description" content="RainBrain helps brands internalize MMM and cut costs, helps media agencies prove impact for clients, and helps consultants build an MMM practice.">
+<link rel="icon" href="assets/RainMan_Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#4CA82F; --green-d:#3d8a26;
+  --blue:#0072C0; --blue-d:#005c9c;
+  --ink:#16242c; --slate:#54646e; --line:#e6ebee;
+  --bg:#ffffff; --bg-soft:#f5f8f6; --bg-tint:#eef5f1;
+  --mid:#268d78;
+  --radius:16px; --maxw:1140px;
+  --grad:linear-gradient(90deg,var(--green),var(--mid) 52%,var(--blue));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:Poppins,Inter,sans-serif;line-height:1.12;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,4.6vw,3.5rem);font-weight:700}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700}
+h3{font-size:1.18rem;font-weight:600}
+p{margin:0 0 1rem}
+a{color:var(--blue);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:Poppins,sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--green)}
+.lead{font-size:1.18rem;color:var(--slate);max-width:60ch}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:74px}
+.brand svg.logo-h{height:40px;width:auto;display:block}
+.nav .links{display:flex;gap:26px;margin-left:auto;align-items:center}
+.nav .links a.navlink{color:var(--ink);font-weight:500;font-size:.95rem}
+.nav .links a.navlink:hover{color:var(--blue)}
+.nav .rm{font-size:.82rem;color:var(--slate)}
+.btn{display:inline-block;font-family:Poppins,sans-serif;font-weight:600;border-radius:999px;
+  padding:.7rem 1.25rem;font-size:.95rem;border:2px solid transparent;cursor:pointer;transition:.15s}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-d)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-d)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.menu-toggle{display:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 420px at 88% -10%, rgba(0,114,192,.10), transparent 60%),
+  radial-gradient(720px 400px at 6% 8%, rgba(76,168,47,.10), transparent 60%);
+  padding:84px 0 72px}
+.hero .logo-big{height:96px;width:auto;margin-bottom:30px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.hero .note{margin-top:16px;color:var(--slate);font-size:.92rem}
+
+/* sections */
+section.block{padding:72px 0}
+section.soft{background:var(--bg-soft)}
+.section-head{max-width:62ch}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* cards */
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  transition:.18s;height:100%}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(20,40,50,.08);border-color:#dfeae3}
+.card .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;
+  background:var(--bg-tint);color:var(--green)}
+.card.blue .ico{color:var(--blue);background:#e7f1fa}
+.card h3{margin-bottom:.35em}
+.card p{color:var(--slate);margin:0}
+
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center}
+.stat .n{font-family:Poppins,sans-serif;font-weight:700;font-size:2rem;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{color:var(--slate);font-size:.95rem}
+
+/* split / highlight */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.panel{background:var(--ink);color:#dfe7eb;border-radius:22px;padding:34px}
+.panel h3{color:#fff}
+.panel ul{margin:0;padding-left:0;list-style:none}
+.panel li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.08)}
+.panel li:last-child{border-bottom:0}
+.panel li::before{content:"";position:absolute;left:0;top:17px;width:12px;height:12px;border-radius:3px;
+  background:var(--grad)}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:18px}
+.step{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:start;background:#fff;
+  border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.step .num{counter-increment:s;font-family:Poppins,sans-serif;font-weight:700;color:#fff;
+  width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--grad)}
+.step .num::before{content:counter(s)}
+.step h3{margin:.1em 0 .25em}
+.step p{margin:0;color:var(--slate)}
+
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+table.cmp{border-collapse:collapse;width:100%;min-width:720px;background:#fff}
+table.cmp th,table.cmp td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);
+  vertical-align:top;font-size:.96rem}
+table.cmp thead th{font-family:Poppins,sans-serif;font-size:1rem;color:var(--ink);background:var(--bg-soft)}
+table.cmp thead th.rb{background:linear-gradient(180deg,#eef7ee,#e7f1fa);color:var(--ink)}
+table.cmp td.dim{font-weight:600;color:var(--ink);width:24%}
+table.cmp td.rb{background:rgba(76,168,47,.045);font-weight:500}
+table.cmp tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;font-family:Poppins,sans-serif;
+  padding:.18rem .55rem;border-radius:999px;background:var(--bg-tint);color:var(--green-d)}
+
+/* CTA band */
+.cta{background:var(--grad);border-radius:24px;padding:46px;color:#fff;text-align:center}
+.cta h2{color:#fff}
+.cta p{color:rgba(255,255,255,.92);max-width:52ch;margin:0 auto 22px}
+.cta .btn-ghost{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5);color:#fff}
+.cta .btn-ghost:hover{background:rgba(255,255,255,.24)}
+.cta .btn-white{background:#fff;color:var(--blue)}
+
+/* form */
+.form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;max-width:560px}
+.form label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 6px}
+.form input,.form select,.form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);
+  border-radius:10px;font:inherit;color:var(--ink)}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+
+/* command bands & figures */
+.band{position:relative;color:#fff;padding:92px 0;background-size:cover;background-position:center;background-color:#0a141f}
+.band::before,.band::after{content:"";position:absolute;left:0;right:0;height:3px;background:var(--grad);z-index:1}
+.band::before{top:0}.band::after{bottom:0}
+.band .kicker{font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:#8fd0a8;margin:0 0 16px}
+.band h2{color:#fff;max-width:24ch}
+.band .lead{color:rgba(255,255,255,.86)}
+.band .coords{margin-top:34px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.55)}
+.band .bstats{display:flex;gap:48px;flex-wrap:wrap;margin-top:36px}
+.band .bstat .n{font-family:Poppins,sans-serif;font-weight:700;font-size:1.55rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.band .bstat .l{color:rgba(255,255,255,.72);font-size:.9rem;margin-top:2px}
+.band-slim{padding:58px 0}
+.figure{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:0 16px 40px rgba(20,40,50,.10)}
+.figure img{display:block;width:100%;height:auto}
+.figure figcaption{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);padding:11px 16px;border-top:1px solid var(--line);margin:0}
+@media(max-width:860px){.band{padding:60px 0}.band .bstats{gap:26px}}
+
+/* footer */
+footer.site{background:#0e1116;color:#aeb9c0;padding:54px 0 30px;margin-top:10px}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer.site h4{color:#fff;font-size:.95rem;letter-spacing:.04em;margin-bottom:14px}
+footer.site a{color:#aeb9c0;display:block;padding:5px 0;font-size:.92rem}
+footer.site a:hover{color:#fff}
+footer.site .parent{display:flex;align-items:center;gap:14px;margin-top:14px}
+footer.site .parent img{height:34px}
+footer.site .legal{border-top:1px solid #20272e;margin-top:34px;padding-top:18px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.85rem;color:#7d8a92}
+
+@media(max-width:860px){
+  .nav .links{display:none}
+  .g3,.g4,.g2,.stats,.split,footer.site .cols{grid-template-columns:1fr}
+  .split{gap:28px}
+  .stats{grid-template-columns:1fr 1fr;gap:26px}
+  section.block{padding:54px 0}
+}
+.wf-band{min-height:560px;display:flex;align-items:center;background:radial-gradient(ellipse 62% 80% at 82% 55%,rgba(12,86,124,.5),transparent 60%),radial-gradient(ellipse 58% 65% at 5% 100%,rgba(18,91,113,.28),transparent 64%),linear-gradient(145deg,#020b18 0%,#031426 46%,#061a2a 100%)}
+.wf-flight{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.wf-flight::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,11,23,.7) 0%,rgba(3,11,23,.4) 39%,rgba(3,11,23,.08) 70%);z-index:2}
+.wf-grid{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle,rgba(111,204,231,.22) 1px,transparent 1.2px),linear-gradient(90deg,transparent 49.9%,rgba(111,204,231,.08) 50%,transparent 50.1%);background-size:34px 34px,33.33% 100%}
+.wf-haze{position:absolute;width:520px;height:200px;border-radius:50%;filter:blur(50px);opacity:.3;animation:wfHaze 15s ease-in-out infinite alternate}
+.wf-haze.h1{right:-100px;top:8%;background:#0a84ad}
+.wf-haze.h2{right:20%;bottom:-90px;background:#16856d;animation-delay:-6s}
+.wf-route{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(117,223,179,.18),rgba(96,190,228,.55),transparent);transform-origin:left;opacity:.6}
+.wf-route.r1{width:56%;left:48%;top:22%;transform:rotate(18deg)}
+.wf-route.r2{width:63%;left:36%;top:62%;transform:rotate(-13deg)}
+.wf-route.r3{width:45%;left:57%;top:82%;transform:rotate(10deg)}
+.wf-plane{position:absolute;z-index:2;width:110px;height:74px;filter:drop-shadow(0 15px 14px rgba(0,0,0,.62))}
+.wf-plane svg{width:100%;height:100%;fill:#07101b;stroke:rgba(118,217,232,.27);stroke-width:1;overflow:visible}
+.wf-plane.p1{top:8%;left:45%;transform:rotate(51deg) scale(.92);animation:wfFlyOne 14s linear infinite}
+.wf-plane.p2{top:24%;left:72%;transform:rotate(47deg) scale(.64);opacity:.78;animation:wfFlyTwo 18s linear infinite -7s}
+.wf-plane.p3{top:54%;left:47%;transform:rotate(49deg) scale(.72);opacity:.88;animation:wfFlyThree 16s linear infinite -4s}
+.wf-plane.p4{top:80%;left:70%;transform:rotate(50deg) scale(.54);opacity:.65;animation:wfFlyFour 20s linear infinite -12s}
+.wf-contrail{position:absolute;left:calc(50% - 9px);top:54px;width:3px;height:130px;transform:translateX(-50%);background:linear-gradient(to bottom,rgba(134,222,244,.55) 0%,rgba(134,222,244,.18) 45%,transparent 92%);z-index:-1;filter:blur(.3px)}
+.wf-contrail.b{left:calc(50% + 9px);opacity:.75}
+.wf-formula{position:absolute;top:54px;z-index:-1;font:500 12px var(--mono,monospace);white-space:nowrap;color:rgba(143,227,168,.85);text-shadow:0 0 7px rgba(143,227,168,.55);opacity:0;animation:wfFormulaTrail 2.6s linear infinite}
+.wf-formula.a{left:calc(50% - 9px)}
+.wf-formula.b2{left:calc(50% + 9px);color:rgba(127,203,234,.85);text-shadow:0 0 7px rgba(127,203,234,.55);animation-delay:.85s}
+.wf-formula.c{left:calc(50% + 9px);color:rgba(224,147,46,.85);text-shadow:0 0 7px rgba(224,147,46,.55);animation-delay:1.7s}
+.wf-radar{position:absolute;right:13%;bottom:13%;width:150px;aspect-ratio:1;opacity:.52;border:1px solid rgba(129,207,232,.3);border-radius:50%;z-index:1}
+.wf-radar i{position:absolute;border:1px solid rgba(129,207,232,.24);border-radius:50%;inset:20%}
+.wf-radar i:nth-child(2){inset:40%}
+.wf-radar i:nth-child(3){inset:0;border-color:transparent;border-top-color:rgba(91,226,150,.8);transform:rotate(-20deg);animation:wfSweep 4s linear infinite}
+.wf-radar b{position:absolute;top:50%;left:50%;width:7px;height:7px;border-radius:50%;background:#8fe3a8;box-shadow:0 0 12px #8fe3a8}
+.wf-status{position:absolute;right:10%;top:16%;padding:8px 11px;border:1px solid rgba(127,203,234,.25);background:rgba(3,13,24,.55);color:rgba(196,234,243,.75);font:.56rem var(--mono,monospace);letter-spacing:.14em;z-index:2}
+.wf-status span{display:inline-block;margin-left:8px;width:6px;height:6px;background:#8fe3a8;border-radius:50%;box-shadow:0 0 8px #8fe3a8;animation:wfBlink 1.8s ease-in-out infinite}
+@keyframes wfFlyOne{0%{transform:translate(-16vw,16vw) rotate(51deg) scale(.92);opacity:0}12%,84%{opacity:1}50%{transform:translate(15vw,-9vw) rotate(48deg) scale(.93)}100%{transform:translate(46vw,-34vw) rotate(51deg) scale(.92);opacity:0}}
+@keyframes wfFlyTwo{0%{transform:translate(-6vw,13vw) rotate(47deg) scale(.64);opacity:0}14%,86%{opacity:.78}50%{transform:translate(17vw,-8.5vw) rotate(44deg) scale(.65)}100%{transform:translate(40vw,-30vw) rotate(47deg) scale(.64);opacity:0}}
+@keyframes wfFlyThree{0%{transform:translate(-14vw,20vw) rotate(49deg) scale(.72);opacity:0}10%,80%{opacity:.88}50%{transform:translate(19vw,-9vw) rotate(46deg) scale(.73)}100%{transform:translate(52vw,-38vw) rotate(49deg) scale(.72);opacity:0}}
+@keyframes wfFlyFour{0%{transform:translate(-9vw,11vw) rotate(50deg) scale(.54);opacity:0}15%,84%{opacity:.65}50%{transform:translate(14.5vw,-8.5vw) rotate(47deg) scale(.55)}100%{transform:translate(38vw,-28vw) rotate(50deg) scale(.54);opacity:0}}
+@keyframes wfFormulaTrail{0%{top:56px;opacity:0;transform:translateX(-50%) scale(.75)}12%{opacity:.95}60%{top:140px;opacity:.55;transform:translateX(-50%) scale(1)}100%{top:220px;opacity:0;transform:translateX(-50%) scale(1.1)}}
+@keyframes wfHaze{to{transform:translate(-80px,35px) scale(1.15)}}
+@keyframes wfSweep{to{transform:rotate(340deg)}}
+@keyframes wfBlink{50%{opacity:.35}}
+@media (max-width:860px){.wf-band{min-height:auto}.wf-radar,.wf-status{display:none}}
+@media (prefers-reduced-motion: reduce){.wf-plane,.wf-haze,.wf-radar i:nth-child(3),.wf-status span,.wf-formula{animation:none}}
+</style></head><body><header class="site"><div class="wrap nav">
+<a class="brand" href="/rainbrain/" aria-label="RainBrain home"><svg class="logo-h" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1102.8 265.0"  role="img" aria-label="RainBrain logo"><g transform="translate(60.0,11.7) scale(0.6905)"><g transform="translate(-44.27,-23.86)"><defs><linearGradient id="lg_head" x1="50" y1="0" x2="350" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4CA82F"/><stop offset="0.5" stop-color="#268D78"/><stop offset="1" stop-color="#0072C0"/></linearGradient></defs><path d="M 338.0 176.0 L 340.0 172.9 L 341.8 169.8 L 343.2 166.5 L 344.3 163.3 L 344.9 160.0 L 345.1 156.7 L 344.7 153.5 L 343.9 150.3 L 342.5 147.2 L 340.7 144.3 L 338.6 141.5 L 336.1 138.8 L 333.4 136.3 L 330.5 133.9 L 327.5 131.6 L 324.5 129.4 L 321.5 127.3 L 318.7 125.2 L 316.0 123.0 L 313.6 120.9 L 311.3 118.7 L 309.3 116.3 L 307.5 113.9 L 305.8 111.4 L 304.3 108.7 L 303.0 105.9 L 301.7 103.0 L 300.4 100.0 L 299.0 97.0 L 297.6 94.0 L 296.0 91.0 L 294.2 88.0 L 292.2 85.2 L 290.0 82.6 L 287.5 80.1 L 284.8 77.9 L 281.9 75.9 L 278.7 74.1 L 275.3 72.7 L 271.8 71.5 L 268.1 70.6 L 264.3 69.9 L 260.5 69.4 L 256.7 69.0 L 252.8 68.8 L 249.0 68.7 L 245.2 68.6 L 241.5 68.5 L 237.9 68.4 L 234.4 68.2 L 230.9 67.9 L 227.5 67.4 L 224.1 66.8 L 220.7 66.1 L 217.3 65.3 L 214.0 64.3 L 210.6 63.3 L 207.1 62.2 L 203.6 61.1 L 200.0 60.0 L 196.4 59.0 L 192.7 58.2 L 188.9 57.5 L 185.1 57.0 L 181.3 56.7 L 177.5 56.8 L 173.8 57.1 L 170.1 57.7 L 166.5 58.6 L 162.9 59.7 L 159.5 61.2 L 156.3 62.8 L 153.1 64.7 L 150.1 66.7 L 147.2 68.8 L 144.4 71.0 L 141.7 73.2 L 139.0 75.4 L 136.4 77.6 L 133.8 79.6 L 131.1 81.5 L 128.4 83.3 L 125.5 84.9 L 122.6 86.5 L 119.5 87.8 L 116.3 89.1 L 113.0 90.4 L 109.5 91.6 L 106.0 92.7 L 102.4 94.0 L 98.8 95.3 L 95.3 96.7 L 91.8 98.3 L 88.5 100.1 L 85.4 102.1 L 82.5 104.3 L 80.0 106.7 L 77.8 109.3 L 76.0 112.1 L 74.6 115.1 L 73.5 118.3 L 72.8 121.5 L 72.4 124.9 L 72.4 128.2 L 72.5 131.6 L 72.8 135.0 L 73.2 138.3 L 73.6 141.5 L 74.0 144.6 L 74.2 147.7 L 74.1 150.6 L 73.9 153.5 L 73.3 156.3 L 72.5 159.0 L 71.3 161.8 L 69.8 164.5 L 68.1 167.3 L 66.2 170.1 L 64.1 173.0 L 62.0 176.0 L 60.0 179.0 L 58.1 182.0 L 56.4 185.1 L 55.1 188.3 L 54.2 191.5 L 53.7 194.7 L 53.8 197.9 L 54.5 201.0 L 55.7 204.0 L 57.5 206.8 L 59.7 209.5 L 62.5 212.1 L 65.6 214.4 L 68.9 216.6 L 72.5 218.6 L 76.1 220.5 L 79.8 222.3 L 83.2 224.0 L 86.5 225.7 L 89.5 227.5 L 92.2 229.3 L 94.4 231.3 L 96.3 233.5 L 97.9 235.9 L 99.1 238.5 L 100.0 241.3 L 100.7 244.4 L 101.3 247.7 L 101.8 251.2 L 102.4 254.7 L 103.2 258.4 L 104.1 261.9 L 105.4 265.4 L 107.0 268.7 L 109.0 271.7 L 111.5 274.3 L 114.3 276.6 L 117.6 278.4 L 121.2 279.8 L 125.1 280.6 L 129.3 281.0 L 133.7 281.0 L 138.2 280.6 L 142.7 279.8 L 147.2 278.9 L 151.6 277.8 L 155.8 276.7 L 159.9 275.7 L 163.7 274.8 L 167.4 274.2 L 170.9 273.9 L 174.2 273.9 L 177.4 274.4 L 180.5 275.4 L 183.6 276.7 L 186.7 278.4 L 189.8 280.4 L 193.1 282.6 L 196.5 285.0 L 200.0 287.4 L 203.7 289.7 L 207.5 291.8 L 211.5 293.7 L 215.5 295.1 L 219.6 296.1 L 223.7 296.6 L 227.7 296.5 L 231.6 295.9 L 235.3 294.7 L 238.8 293.0 L 242.1 290.8 L 245.2 288.2 L 247.9 285.3 L 250.5 282.1 L 252.8 278.9 L 255.0 275.6 L 257.0 272.5 L 259.0 269.5 L 261.0 266.7 L 263.1 264.3 L 265.4 262.1 L 267.9 260.4 L 270.6 258.9 L 273.7 257.8 L 277.0 257.0 L 280.7 256.4 L 284.6 256.0 L 288.8 255.6 L 293.1 255.2 L 297.6 254.7 L 302.0 254.1 L 306.4 253.3 L 310.6 252.2 L 314.5 250.8 L 318.1 249.1 L 321.2 247.0 L 323.8 244.7 L 325.9 242.0 L 327.5 239.0 L 328.5 235.9 L 329.1 232.5 L 329.2 229.1 L 328.9 225.6 L 328.3 222.1 L 327.5 218.6 L 326.6 215.2 L 325.7 211.9 L 325.0 208.8 L 324.4 205.7 L 324.1 202.8 L 324.1 200.0 L 324.5 197.3 L 325.2 194.7 L 326.3 192.1 L 327.8 189.6 L 329.6 187.0 L 331.5 184.4 L 333.7 181.7 L 335.9 178.9 Z" fill="none" stroke="url(#lg_head)" stroke-width="14" stroke-linejoin="round"/><g fill="none" stroke="url(#lg_head)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M 190.9 77.6 L 188.0 86.0 L 185.6 94.3 L 183.9 102.6 L 183.1 110.8 L 183.3 118.9 L 184.4 127.0 L 186.4 135.0 L 189.3 143.0 L 192.9 150.9 L 196.9 158.8 L 201.1 166.7 L 205.3 174.6 L 209.2 182.5 L 212.5 190.4 L 215.1 198.4 L 216.9 206.4 L 217.6 214.5 L 217.4 222.7 L 216.3 230.9 L 214.3 239.2 L 211.7 247.5 L 208.7 255.9 L 205.6 264.2 L 202.5 272.6"/><path d="M 192.0 106.2 L 187.1 105.2 L 182.3 104.4 L 177.5 103.6 L 172.7 103.1 L 168.0 102.8 L 163.3 102.8 L 158.7 103.1 L 154.2 103.8 L 149.8 104.9 L 145.4 106.3 L 141.1 108.0 L 136.9 110.1 L 132.7 112.4 L 128.6 115.0 L 124.5 117.7 L 120.4 120.5 L 116.3 123.3 L 112.2 126.1 L 108.1 128.7 L 104.0 131.2 L 99.8 133.4 L 95.5 135.3 L 91.2 136.9 L 86.8 138.1 L 82.3 139.0"/><path d="M 208.0 118.2 L 212.9 119.2 L 217.7 120.0 L 222.5 120.8 L 227.3 121.3 L 232.0 121.6 L 236.7 121.6 L 241.3 121.3 L 245.8 120.6 L 250.2 119.5 L 254.6 118.1 L 258.9 116.4 L 263.1 114.3 L 267.3 112.0 L 271.4 109.4 L 275.5 106.7 L 279.6 103.9 L 283.7 101.1"/><path d="M 192.0 149.1 L 187.1 148.2 L 182.3 147.3 L 177.5 146.5 L 172.7 146.0 L 168.0 145.7 L 163.3 145.7 L 158.7 146.0 L 154.2 146.7 L 149.8 147.8 L 145.4 149.2 L 141.1 151.0 L 136.9 153.0 L 132.7 155.4 L 128.6 157.9 L 124.5 160.6 L 120.4 163.4 L 116.3 166.2 L 112.2 169.0 L 108.1 171.6 L 104.0 174.1 L 99.8 176.3 L 95.5 178.2 L 91.2 179.8 L 86.8 181.0 L 82.3 181.9 L 77.7 182.4"/><path d="M 208.0 161.1 L 212.9 162.1 L 217.7 163.0 L 222.5 163.7 L 227.3 164.3 L 232.0 164.6 L 236.7 164.6 L 241.3 164.2 L 245.8 163.5 L 250.2 162.5 L 254.6 161.0 L 258.9 159.3 L 263.1 157.2 L 267.3 154.9 L 271.4 152.3 L 275.5 149.6 L 279.6 146.8 L 283.7 144.0 L 287.8 141.3 L 291.9 138.6 L 296.0 136.2 L 300.2 134.0 L 304.5 132.0 L 308.8 130.4"/><path d="M 192.0 193.2 L 187.1 192.2 L 182.3 191.4 L 177.5 190.6 L 172.7 190.1 L 168.0 189.8 L 163.3 189.8 L 158.7 190.1 L 154.2 190.8 L 149.8 191.9 L 145.4 193.3 L 141.1 195.0 L 136.9 197.1 L 132.7 199.4 L 128.6 202.0 L 124.5 204.7 L 120.4 207.5 L 116.3 210.3 L 112.2 213.1 L 108.1 215.7 L 104.0 218.2 L 99.8 220.4 L 95.5 222.3"/><path d="M 208.0 205.2 L 212.9 206.2 L 217.7 207.0 L 222.5 207.8 L 227.3 208.3 L 232.0 208.6 L 236.7 208.6 L 241.3 208.3 L 245.8 207.6 L 250.2 206.5 L 254.6 205.1 L 258.9 203.4 L 263.1 201.3 L 267.3 199.0 L 271.4 196.4 L 275.5 193.7 L 279.6 190.9 L 283.7 188.1 L 287.8 185.3 L 291.9 182.7 L 296.0 180.2 L 300.2 178.0 L 304.5 176.1 L 308.8 174.5 L 313.2 173.3 L 317.7 172.4 L 322.3 171.9"/><path d="M 192.0 233.8 L 187.1 232.8 L 182.3 232.0 L 177.5 231.2 L 172.7 230.7 L 168.0 230.4 L 163.3 230.4 L 158.7 230.7 L 154.2 231.4 L 149.8 232.5 L 145.4 233.9 L 141.1 235.6 L 136.9 237.7 L 132.7 240.0 L 128.6 242.6 L 124.5 245.3 L 120.4 248.1 L 116.3 250.9"/><path d="M 208.0 245.8 L 212.9 246.8 L 217.7 247.6 L 222.5 248.4 L 227.3 248.9 L 232.0 249.2 L 236.7 249.2 L 241.3 248.9 L 245.8 248.2 L 250.2 247.1 L 254.6 245.7 L 258.9 244.0 L 263.1 241.9 L 267.3 239.6 L 271.4 237.0 L 275.5 234.3 L 279.6 231.5 L 283.7 228.7 L 287.8 225.9 L 291.9 223.3 L 296.0 220.8 L 300.2 218.6 L 304.5 216.7 L 308.8 215.1 L 313.2 213.9"/></g><rect x="312.23" y="62.50" width="15.00" height="15.00" rx="4" ry="4" fill="#0B7AAC" opacity="0.90"/><rect x="337.58" y="51.85" width="12.30" height="12.30" rx="4" ry="4" fill="#0877B2" opacity="0.70"/><rect x="364.69" y="40.96" width="10.09" height="10.09" rx="4" ry="4" fill="#0575B7" opacity="0.50"/><rect x="393.59" y="29.86" width="8.27" height="8.27" rx="4" ry="4" fill="#0273BD" opacity="0.30"/></g></g><g fill="#4CA82F" transform="translate(294.3,165.0)"><path d="M420 0 274 265H233V0H62V702H349Q432 702 490.5 673.0Q549 644 578.0 593.5Q607 543 607 481Q607 411 567.5 356.0Q528 301 451 278L613 0ZM233 386H339Q386 386 409.5 409.0Q433 432 433 474Q433 514 409.5 537.0Q386 560 339 560H233Z" transform="translate(0.000,0.000) scale(0.15000,-0.15000)"/>
+<path d="M274 566Q333 566 377.5 542.0Q422 518 446 479V558H617V0H446V79Q421 40 376.5 16.0Q332 -8 273 -8Q205 -8 149.0 27.5Q93 63 60.5 128.5Q28 194 28 280Q28 366 60.5 431.0Q93 496 149.0 531.0Q205 566 274 566ZM324 417Q273 417 237.5 380.5Q202 344 202 280Q202 216 237.5 178.5Q273 141 324 141Q375 141 410.5 178.0Q446 215 446 279Q446 343 410.5 380.0Q375 417 324 417Z" transform="translate(97.050,0.000) scale(0.15000,-0.15000)"/>
+<path d="M46 708Q46 748 74.5 774.5Q103 801 148 801Q192 801 220.5 774.5Q249 748 249 708Q249 669 220.5 642.5Q192 616 148 616Q103 616 74.5 642.5Q46 669 46 708ZM233 558V0H62V558Z" transform="translate(198.150,0.000) scale(0.15000,-0.15000)"/>
+<path d="M617 326V0H447V303Q447 359 418.0 390.0Q389 421 340 421Q291 421 262.0 390.0Q233 359 233 303V0H62V558H233V484Q259 521 303.0 542.5Q347 564 402 564Q500 564 558.5 500.5Q617 437 617 326Z" transform="translate(241.650,0.000) scale(0.15000,-0.15000)"/></g><g fill="#0072C0" transform="translate(636.3,165.0)"><path d="M622 191Q622 103 560.5 51.5Q499 0 389 0H62V702H378Q485 702 545.5 653.0Q606 604 606 520Q606 458 573.5 417.0Q541 376 487 360Q548 347 585.0 299.5Q622 252 622 191ZM233 418H345Q387 418 409.5 436.5Q432 455 432 491Q432 527 409.5 546.0Q387 565 345 565H233ZM449 214Q449 251 424.5 272.0Q400 293 357 293H233V138H359Q402 138 425.5 157.5Q449 177 449 214Z" transform="translate(0.000,0.000) scale(0.15000,-0.15000)"/>
+<path d="M408 564V383H361Q297 383 265.0 355.5Q233 328 233 259V0H62V558H233V465Q263 511 308.0 537.5Q353 564 408 564Z" transform="translate(98.100,0.000) scale(0.15000,-0.15000)"/>
+<path d="M274 566Q333 566 377.5 542.0Q422 518 446 479V558H617V0H446V79Q421 40 376.5 16.0Q332 -8 273 -8Q205 -8 149.0 27.5Q93 63 60.5 128.5Q28 194 28 280Q28 366 60.5 431.0Q93 496 149.0 531.0Q205 566 274 566ZM324 417Q273 417 237.5 380.5Q202 344 202 280Q202 216 237.5 178.5Q273 141 324 141Q375 141 410.5 178.0Q446 215 446 279Q446 343 410.5 380.0Q375 417 324 417Z" transform="translate(161.550,0.000) scale(0.15000,-0.15000)"/>
+<path d="M46 708Q46 748 74.5 774.5Q103 801 148 801Q192 801 220.5 774.5Q249 748 249 708Q249 669 220.5 642.5Q192 616 148 616Q103 616 74.5 642.5Q46 669 46 708ZM233 558V0H62V558Z" transform="translate(262.650,0.000) scale(0.15000,-0.15000)"/>
+<path d="M617 326V0H447V303Q447 359 418.0 390.0Q389 421 340 421Q291 421 262.0 390.0Q233 359 233 303V0H62V558H233V484Q259 521 303.0 542.5Q347 564 402 564Q500 564 558.5 500.5Q617 437 617 326Z" transform="translate(306.150,0.000) scale(0.15000,-0.15000)"/></g><g fill="#2B3A42" transform="translate(294.3,207.0)"><path d="M807 695V0H693V476L481 0H402L189 476V0H75V695H198L442 150L685 695Z" transform="translate(0.000,0.000) scale(0.02650,-0.02650)"/>
+<path d="M807 695V0H693V476L481 0H402L189 476V0H75V695H198L442 150L685 695Z" transform="translate(23.479,0.000) scale(0.02650,-0.02650)"/>
+<path d="M807 695V0H693V476L481 0H402L189 476V0H75V695H198L442 150L685 695Z" transform="translate(46.958,0.000) scale(0.02650,-0.02650)"/>
+<path d="M48 66Q48 97 69.0 118.0Q90 139 121 139Q151 139 172.0 118.0Q193 97 193 66Q193 35 172.0 14.0Q151 -7 121 -7Q90 -7 69.0 14.0Q48 35 48 66Z" transform="translate(70.437,0.000) scale(0.02650,-0.02650)"/>
+<path d="" transform="translate(76.930,0.000) scale(0.02650,-0.02650)"/>
+<path d="M45 625V729H253V0H138V625Z" transform="translate(83.925,0.000) scale(0.02650,-0.02650)"/>
+<path d="M320 742Q463 742 521.5 644.5Q580 547 580 374Q580 199 521.5 100.5Q463 2 320 2Q177 2 118.5 100.5Q60 199 60 374Q60 547 118.5 644.5Q177 742 320 742ZM320 638Q257 638 225.0 602.5Q193 567 182.5 511.0Q172 455 172 374Q172 290 182.0 233.0Q192 176 224.5 141.0Q257 106 320 106Q383 106 415.5 141.0Q448 176 458.0 233.0Q468 290 468 374Q468 455 457.5 511.0Q447 567 415.0 602.5Q383 638 320 638Z" transform="translate(93.306,0.000) scale(0.02650,-0.02650)"/>
+<path d="M394 347 610 0H482L325 252L178 0H51L267 347L50 695H178L336 441L484 695H611Z" transform="translate(110.399,0.000) scale(0.02650,-0.02650)"/>
+<path d="" transform="translate(127.995,0.000) scale(0.02650,-0.02650)"/>
+<path d="M306 458H204V0H89V458H24V551H89V590Q89 685 139.5 728.5Q190 772 298 772V677Q246 677 225.0 657.5Q204 638 204 590V551H306Z" transform="translate(134.991,0.000) scale(0.02650,-0.02650)"/>
+<path d="M297 560Q362 560 410.5 534.5Q459 509 488 471V551H603V0H488V82Q459 43 409.0 17.0Q359 -9 295 -9Q224 -9 165.0 27.5Q106 64 71.5 129.5Q37 195 37 278Q37 361 71.5 425.0Q106 489 165.5 524.5Q225 560 297 560ZM321 461Q277 461 239.0 439.5Q201 418 177.5 376.5Q154 335 154 278Q154 221 177.5 178.0Q201 135 239.5 112.5Q278 90 321 90Q365 90 403.0 112.0Q441 134 464.5 176.5Q488 219 488 276Q488 333 464.5 375.0Q441 417 403.0 439.0Q365 461 321 461Z" transform="translate(143.895,0.000) scale(0.02650,-0.02650)"/>
+<path d="M45 169H163Q166 134 196.5 110.5Q227 87 273 87Q321 87 347.5 105.5Q374 124 374 153Q374 184 344.5 199.0Q315 214 251 232Q189 249 150.0 265.0Q111 281 82.5 314.0Q54 347 54 401Q54 445 80.0 481.5Q106 518 154.5 539.0Q203 560 266 560Q360 560 417.5 512.5Q475 465 479 383H365Q362 420 335.0 442.0Q308 464 262 464Q217 464 193.0 447.0Q169 430 169 402Q169 380 185.0 365.0Q201 350 224.0 341.5Q247 333 292 320Q352 304 390.5 287.5Q429 271 457.0 239.0Q485 207 486 154Q486 107 460.0 70.0Q434 33 386.5 12.0Q339 -9 275 -9Q210 -9 158.5 14.5Q107 38 77.0 78.5Q47 119 45 169Z" transform="translate(161.968,0.000) scale(0.02650,-0.02650)"/>
+<path d="M208 458V153Q208 122 222.5 108.5Q237 95 272 95H342V0H252Q175 0 134.0 36.0Q93 72 93 153V458H28V551H93V688H208V551H342V458Z" transform="translate(176.225,0.000) scale(0.02650,-0.02650)"/>
+<path d="M576 233H155Q160 167 204.0 127.0Q248 87 312 87Q404 87 442 164H565Q540 88 474.5 39.5Q409 -9 312 -9Q233 -9 170.5 26.5Q108 62 72.5 126.5Q37 191 37 276Q37 361 71.5 425.5Q106 490 168.5 525.0Q231 560 312 560Q390 560 451.0 526.0Q512 492 546.0 430.5Q580 369 580 289Q580 258 576 233ZM461 325Q460 388 416.0 426.0Q372 464 307 464Q248 464 206.0 426.5Q164 389 156 325Z" transform="translate(186.189,0.000) scale(0.02650,-0.02650)"/>
+<path d="M354 560V442H325Q258 442 223.5 408.0Q189 374 189 290V0H75V551H189V471Q214 513 255.5 536.5Q297 560 354 560Z" transform="translate(202.645,0.000) scale(0.02650,-0.02650)"/>
+<path d="M200 137 79 -139H5L76 137Z" transform="translate(212.927,0.000) scale(0.02650,-0.02650)"/>
+<path d="" transform="translate(218.996,0.000) scale(0.02650,-0.02650)"/>
+<path d="M354 560V442H325Q258 442 223.5 408.0Q189 374 189 290V0H75V551H189V471Q214 513 255.5 536.5Q297 560 354 560Z" transform="translate(225.992,0.000) scale(0.02650,-0.02650)"/>
+<path d="M576 233H155Q160 167 204.0 127.0Q248 87 312 87Q404 87 442 164H565Q540 88 474.5 39.5Q409 -9 312 -9Q233 -9 170.5 26.5Q108 62 72.5 126.5Q37 191 37 276Q37 361 71.5 425.5Q106 490 168.5 525.0Q231 560 312 560Q390 560 451.0 526.0Q512 492 546.0 430.5Q580 369 580 289Q580 258 576 233ZM461 325Q460 388 416.0 426.0Q372 464 307 464Q248 464 206.0 426.5Q164 389 156 325Z" transform="translate(236.274,0.000) scale(0.02650,-0.02650)"/>
+<path d="M306 458H204V0H89V458H24V551H89V590Q89 685 139.5 728.5Q190 772 298 772V677Q246 677 225.0 657.5Q204 638 204 590V551H306Z" transform="translate(252.731,0.000) scale(0.02650,-0.02650)"/>
+<path d="M60 697Q60 728 81.0 749.0Q102 770 133 770Q163 770 184.0 749.0Q205 728 205 697Q205 666 184.0 645.0Q163 624 133 624Q102 624 81.0 645.0Q60 666 60 697ZM189 551V0H75V551Z" transform="translate(261.635,0.000) scale(0.02650,-0.02650)"/>
+<path d="M579 325V0H466V308Q466 382 429.0 421.5Q392 461 328 461Q264 461 226.5 421.5Q189 382 189 308V0H75V551H189V488Q217 522 260.5 541.0Q304 560 353 560Q418 560 469.5 533.0Q521 506 550.0 453.0Q579 400 579 325Z" transform="translate(268.736,0.000) scale(0.02650,-0.02650)"/>
+<path d="M576 233H155Q160 167 204.0 127.0Q248 87 312 87Q404 87 442 164H565Q540 88 474.5 39.5Q409 -9 312 -9Q233 -9 170.5 26.5Q108 62 72.5 126.5Q37 191 37 276Q37 361 71.5 425.5Q106 490 168.5 525.0Q231 560 312 560Q390 560 451.0 526.0Q512 492 546.0 430.5Q580 369 580 289Q580 258 576 233ZM461 325Q460 388 416.0 426.0Q372 464 307 464Q248 464 206.0 426.5Q164 389 156 325Z" transform="translate(286.041,0.000) scale(0.02650,-0.02650)"/>
+<path d="M298 560Q352 560 404.5 536.5Q457 513 488 474V740H603V0H488V83Q460 43 410.5 17.0Q361 -9 297 -9Q225 -9 165.5 27.5Q106 64 71.5 129.5Q37 195 37 278Q37 361 71.5 425.0Q106 489 165.5 524.5Q225 560 298 560ZM321 461Q277 461 239.0 439.5Q201 418 177.5 376.5Q154 335 154 278Q154 221 177.5 178.0Q201 135 239.5 112.5Q278 90 321 90Q365 90 403.0 112.0Q441 134 464.5 176.5Q488 219 488 276Q488 333 464.5 375.0Q441 417 403.0 439.0Q365 461 321 461Z" transform="translate(302.498,0.000) scale(0.02650,-0.02650)"/></g></svg></a>
+<nav class="links">
+<a class="navlink" href="/rainbrain/">Overview</a>
+<a class="navlink" href="/rainbrain/how-it-works">How it works</a>
+<a class="navlink" href="/rainbrain/compare">Compare</a>
+<a class="navlink" href="/rainbrain/who-its-for" style="color:var(--blue)">Who it&#39;s for</a>
+<a class="rm" href="/" target="_blank" rel="noopener">RainMan&nbsp;&#8599;</a>
+<a class="btn btn-primary" href="/rainbrain/try">Start free trial</a>
+</nav></div></header>
+<section class="block"><div class="wrap">
+<p class="eyebrow">Who it&#39;s for</p>
+<h1>Robust MMM for everyone who needs the answer</h1>
+<p class="lead">Whether you own the brand, the campaign or the consulting engagement, RainBrain gives you trustworthy marketing measurement — fast.</p>
+<div class="grid g3" style="margin-top:34px">
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><circle cx="12" cy="14" r="6"/></svg></div><h3>Brands</h3>
+<p>Internalize MMM, cut measurement costs and improve satisfaction for internal client departments.</p>
+<ul style="margin:14px 0 0;padding:0"><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Bring MMM in-house with confidence</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Cut external measurement spend</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Faster answers for planning cycles</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Explainable results for leadership</li></ul></div>
+<div class="card blue"><div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg></div><h3>Media agencies</h3>
+<p>Understand and prove the impact of media and other marketing initiatives for your clients.</p>
+<ul style="margin:14px 0 0;padding:0"><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Show the full-mix story, not just digital</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Turn analyses around in days, not weeks</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Client-ready reporting out of the box</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Win and retain accounts</li></ul></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Consultants</h3>
+<p>Build an MMM practice without rebuilding pipelines for every engagement.</p>
+<ul style="margin:14px 0 0;padding:0"><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Deliver client-ready models, no code</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Own the narrative and the judgement</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Scale across clients and categories</li><li style="list-style:none;position:relative;padding:7px 0 7px 28px;color:var(--slate)"><span style="position:absolute;left:0;top:9px;color:var(--green)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Backed by RainMan&#39;s methodology</li></ul></div>
+</div></div></section>
+
+<section class="block soft"><div class="wrap"><div class="split">
+<div><p class="eyebrow">Proven foundation</p>
+<h2>Carefully built by people who&#39;ve done this for 15+ years</h2>
+<p class="lead">RainBrain was developed by an experienced team of data scientists and marketers who have built models across CPG, Auto, Retail and many other categories.</p>
+<p>That hard-won knowledge is baked into the tool — so the automation produces models that integrate business understanding with the latest techniques in model building.</p>
+<a class="btn btn-primary" href="/methodology" target="_blank" rel="noopener">See the RainMan methodology &#8599;</a></div>
+<div class="panel"><h3>What stays true for every user</h3>
+<ul>
+<li>Robust models, grounded in domain expertise</li>
+<li>No coding — usable after a short session</li>
+<li>The full marketing mix, properly weighted</li>
+<li>Answers framed for business decisions</li>
+</ul></div>
+</div></div></section>
+
+<section class="band wf-band">
+<div class="wf-flight" aria-hidden="true">
+<div class="wf-grid"></div>
+<div class="wf-haze h1"></div>
+<div class="wf-haze h2"></div>
+<div class="wf-route r1"></div>
+<div class="wf-route r2"></div>
+<div class="wf-route r3"></div>
+<div class="wf-plane p1"><span class="wf-contrail"></span><span class="wf-contrail b"></span><span class="wf-formula a">&beta;</span><span class="wf-formula b2">R&sup2;</span><span class="wf-formula c">&Sigma;</span><svg viewBox="0 0 120 80"><path d="M60 4 L68 24 L108 42 L104 52 L70 44 L78 68 L64 58 L60 76 L56 58 L42 68 L50 44 L16 52 L12 42 L52 24 Z"/></svg></div>
+<div class="wf-plane p2"><span class="wf-contrail"></span><span class="wf-contrail b"></span><span class="wf-formula a">&beta;</span><span class="wf-formula b2">R&sup2;</span><span class="wf-formula c">&Sigma;</span><svg viewBox="0 0 120 80"><path d="M60 4 L68 24 L108 42 L104 52 L70 44 L78 68 L64 58 L60 76 L56 58 L42 68 L50 44 L16 52 L12 42 L52 24 Z"/></svg></div>
+<div class="wf-plane p3"><span class="wf-contrail"></span><span class="wf-contrail b"></span><span class="wf-formula a">&beta;</span><span class="wf-formula b2">R&sup2;</span><span class="wf-formula c">&Sigma;</span><svg viewBox="0 0 120 80"><path d="M60 4 L68 24 L108 42 L104 52 L70 44 L78 68 L64 58 L60 76 L56 58 L42 68 L50 44 L16 52 L12 42 L52 24 Z"/></svg></div>
+<div class="wf-plane p4"><span class="wf-contrail"></span><span class="wf-contrail b"></span><span class="wf-formula a">&beta;</span><span class="wf-formula b2">R&sup2;</span><span class="wf-formula c">&Sigma;</span><svg viewBox="0 0 120 80"><path d="M60 4 L68 24 L108 42 L104 52 L70 44 L78 68 L64 58 L60 76 L56 58 L42 68 L50 44 L16 52 L12 42 L52 24 Z"/></svg></div>
+<div class="wf-radar"><i></i><i></i><i></i><b></b></div>
+<div class="wf-status">COMMAND / ACTIVE <span></span></div>
+</div>
+<div class="wrap" style="position:relative;z-index:1">
+<p class="kicker">Deploy at scale</p>
+<h2>One platform. Your entire fleet of brands.</h2>
+<p class="lead">Agencies, consultants and multi-brand teams run whole squadrons of models in RainBrain &mdash; the same rigour on every mission, whether it&#39;s one flagship brand or forty.</p>
+<div class="bstats">
+<div class="bstat"><div class="n">Brands</div><div class="l">own the answers in-house</div></div>
+<div class="bstat"><div class="n">Agencies</div><div class="l">scale MMM across clients</div></div>
+<div class="bstat"><div class="n">Consultants</div><div class="l">deliver more, staff less</div></div>
+</div>
+</div></section>
+
+<section class="block"><div class="wrap"><div class="cta">
+<h2>Find your fit in a 15-minute look.</h2>
+<p>Tell us your role and we&#39;ll tailor a trial to the questions you need answered.</p>
+<a class="btn btn-white" href="/rainbrain/try">Start free trial</a></div></div></section>
+<footer class="site"><div class="wrap">
+<div class="cols">
+<div>
+<h4>RainBrain</h4>
+<p style="color:#aeb9c0;max-width:38ch">AI-built Marketing Mix Modeling with a human in the loop. Robust models, business-ready answers — 10X faster and refined.</p>
+<div class="parent"><img src="assets/RainMan_Logo.png" alt="RainMan"><span style="font-size:.85rem">A product of <a href="../index.html" target="_blank" rel="noopener" style="display:inline;color:#fff">RainMan</a></span></div>
+</div>
+<div>
+<h4>RainMan</h4>
+<a href="/rainbrain/team" target="_blank" rel="noopener">Team</a>
+<a href="/rainbrain/methodology" target="_blank" rel="noopener">Methodology</a>
+<a href="./rainbrain/services" target="_blank" rel="noopener">Services</a>
+<a href="/rainbrain/products" target="_blank" rel="noopener">Products</a>
+</div>
+<div>
+<h4>Resources</h4>
+<a href="/resources" target="_blank" rel="noopener">White Papers</a>
+<a href="/resources" target="_blank" rel="noopener">Case Studies</a>
+<a href="/resources" target="_blank" rel="noopener">Blog</a>
+<a href="/contact" target="_blank" rel="noopener">Contact</a>
+</div>
+</div>
+<div class="legal"><span>Copyright &copy; Rainman.in</span><span>RainBrain&nbsp;&mdash;&nbsp;MMM. 10X faster, refined</span></div>
+</div></footer>
+<!-- RainMan parent link bar -->
+<div style="background:rgba(10,17,32,0.96);border-top:1px solid rgba(127,203,234,0.14);padding:14px 0;text-align:center;">
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase;margin:0;">
+    RainBrain is a product of 
+    <a href="/" style="color:#8FE3A8;text-decoration:underline;">RainMan Consulting</a>
+    &nbsp;·&nbsp; 
+    <a href="/contact" style="color:rgba(255,255,255,.6);">Contact RainMan ↗</a>
+    &nbsp;·&nbsp;
+    <a href="/products" style="color:rgba(255,255,255,.6);">All products ↗</a>
+  </p>
+</div>
+</body></html>

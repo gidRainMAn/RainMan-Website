@@ -10,7 +10,7 @@ const session = require("express-session");
 // Route Imports
 const indexRoutes = require("./routes");
 const adminRoutes = require("./routes/admin.routes");
-
+const rainbrainRoutes = require("./routes/rainbrain.routes");
 
 // Load Environment Variables
 dotenv.config();
@@ -38,6 +38,11 @@ app.set("layout", "layouts/main");
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+    "/rainbrain/assets",
+    express.static(path.join(__dirname, "views", "rainbrain", "assets"))
+);
 
 // Parse Form Data
 app.use(express.urlencoded({ extended: true }));
@@ -79,6 +84,8 @@ app.use(
 app.use("/", indexRoutes);
 
 app.use("/admin", adminRoutes);
+
+app.use("/rainbrain", rainbrainRoutes);
 // ==========================
 // 404 Page - Page Not Found
 // ==========================
