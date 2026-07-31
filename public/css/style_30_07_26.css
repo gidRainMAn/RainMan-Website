@@ -2910,6 +2910,18 @@ section.tight {
   background-size: 26px 26px;
 }
 
+.shot-placeholder.octopus-shot {
+  aspect-ratio: 3 / 2;
+}
+
+.shot-placeholder.octopus-shot img.octopus-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
 .shot-placeholder .hud-corner {
   width: 20px;
   height: 20px;

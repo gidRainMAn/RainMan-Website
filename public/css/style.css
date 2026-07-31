@@ -3013,6 +3013,18 @@ section.tight {
   background-size: 26px 26px;
 }
 
+.shot-placeholder.octopus-shot {
+  aspect-ratio: 3 / 2;
+}
+
+.shot-placeholder.octopus-shot img.octopus-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
 .shot-placeholder .hud-corner {
   width: 20px;
   height: 20px;
@@ -3219,6 +3231,52 @@ section.tight {
       rgba(0, 0, 0, 0.06) 10px,
       rgba(0, 0, 0, 0.06) 20px);
 }
+
+.bio {
+    display: flex;
+    flex-direction: column;
+}
+
+.bio p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 10px;
+    order: 1;
+}
+
+.bio[open] p {
+    display: block;
+}
+
+.bio summary {
+    list-style: none;
+    cursor: pointer;
+    display: block;
+    order: 2;
+    width: fit-content;
+    margin: 12px 0 0 auto;   /* Pushes button to the bottom-right */
+    padding: 8px 16px;
+    background: #FFD54A;
+    color: #000;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.bio summary::-webkit-details-marker {
+    display: none;
+}
+
+.bio summary::after {
+    content: "Read More...";
+}
+
+.bio[open] summary::after {
+    content: "Read Less";
+}
+
 
 .id-tag {
   position: absolute;
