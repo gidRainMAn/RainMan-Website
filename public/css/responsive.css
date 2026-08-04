@@ -1,0 +1,920 @@
+/* ============================================================
+   RAINMAN — RESPONSIVE OVERRIDES
+   Supplements style.css and style1.css breakpoints.
+   ============================================================ */
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE  ≤ 768px
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* ── Container padding ───────────────────────────────────── */
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    /* ── Section vertical rhythm ─────────────────────────────── */
+    section {
+        padding: 48px 0;
+    }
+
+    /* ── Typography ──────────────────────────────────────────── */
+    h1 {
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+        line-height: 1.15;
+    }
+
+    h2 {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: clamp(1rem, 4.5vw, 1.25rem);
+    }
+
+    p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+    .eyebrow {
+        font-size: .62rem;
+        letter-spacing: .2em;
+    }
+
+    /* ── Hero bands (non-home) ───────────────────────────────── */
+    .img-band-top,
+    .premium-band,
+    .flight-band,
+    .tactical-band,
+    .signal-band,
+    .archive-band {
+        min-height: 280px !important;
+        padding: 88px 0 52px !important;
+    }
+
+    .img-band-inner {
+        padding-top: 0;
+    }
+
+    .img-band-inner h2 {
+        font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+        max-width: 100%;
+    }
+
+    .img-band-inner p {
+        font-size: .9rem;
+        max-width: 100%;
+    }
+
+    /* ── Navbar ──────────────────────────────────────────────── */
+    .nav .container {
+        height: 58px;
+    }
+
+    .nav-logo .chip img {
+        height: 40px;
+    }
+
+    .nav-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .nav-links,
+    .nav-cta {
+        display: none;
+    }
+
+    /* Mobile nav open state */
+    .nav.open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 17, 32, 0.99);
+        padding: 16px 20px 20px;
+        gap: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+        z-index: 200;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, .4);
+    }
+
+    .nav.open .nav-links a {
+        padding: 13px 4px;
+        font-size: .75rem;
+        border-bottom: 1px solid rgba(255, 255, 255, .07);
+        display: block;
+    }
+
+    .nav.open .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav.open .nav-cta {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: calc(58px + var(--mobile-links-h, 220px));
+        left: 0;
+        right: 0;
+        background: rgba(10, 17, 32, 0.99);
+        padding: 12px 20px 16px;
+        gap: 8px;
+        z-index: 200;
+    }
+
+    /* ── HOME HERO ───────────────────────────────────────────── */
+    .hero.hud-field {
+        min-height: 100svh;
+        padding-top: 58px;
+        justify-content: flex-start;
+    }
+
+    .hud-field .hero-inner {
+        padding-top: 28px;
+        padding-bottom: 32px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hud-field .container.hero-inner {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hud-field .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .hud-field .hero-art {
+        display: none;
+    }
+
+    /* hide decorative HUD elements */
+    .hud-coord,
+    .hud-corner {
+        display: none;
+    }
+
+    .hud-field h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        line-height: 1.08;
+        margin-bottom: 14px;
+    }
+
+    .hero-sub {
+        font-size: .92rem;
+        line-height: 1.65;
+        margin-bottom: 22px;
+        max-width: 100%;
+    }
+
+    /* CTA buttons — wrap gracefully */
+    .hero-cta {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero-cta .btn {
+        width: auto;
+        font-size: .72rem;
+        padding: 10px 18px;
+    }
+
+    /* Stat strip — 2×2 grid */
+    .hud-field .stat-strip,
+    .stat-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 0;
+        border-top: 1px solid rgba(127, 203, 234, .22);
+        padding: 16px 0 20px;
+        margin-top: 20px;
+        flex-wrap: unset;
+    }
+
+    .hud-field .stat,
+    .stat {
+        flex: unset;
+        min-width: unset;
+        padding: 10px 12px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    /* right border on left column */
+    .hud-field .stat:nth-child(odd),
+    .stat:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    /* no bottom border on last row */
+    .hud-field .stat:nth-last-child(-n+2),
+    .stat:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    .hud-field .stat b,
+    .stat b {
+        font-size: 1.5rem;
+        line-height: 1.1;
+        display: block;
+    }
+
+    .stat span {
+        font-size: .55rem;
+        letter-spacing: .06em;
+        line-height: 1.3;
+        margin-top: 3px;
+        display: block;
+    }
+
+    /* ── HOME — Splits ───────────────────────────────────────── */
+    .split,
+    .split.rev,
+    .split-narrow {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .split.rev>*:first-child {
+        order: 2;
+    }
+
+    .split.rev>*:last-child {
+        order: 1;
+    }
+
+    .split-media {
+        width: 100%;
+    }
+
+    .section-head {
+        margin-bottom: 24px;
+    }
+
+    .kicker-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* ── HOME — grid-2 on mobile ─────────────────────────────── */
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* ── HOME — RainBrain spotlight ──────────────────────────── */
+    .rb-spotlight {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+        padding: 22px 18px 26px;
+        grid-template-columns: unset;
+    }
+
+    .rb-spotlight .rb-logo-img {
+        height: 38px;
+        margin-bottom: 10px;
+    }
+
+    .rb-spotlight h2 {
+        font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+    }
+
+    .rb-spotlight p {
+        font-size: .9rem;
+    }
+
+    .rb-spotlight .rb-features {
+        margin: 10px 0 16px;
+        gap: 8px;
+    }
+
+    .rb-spotlight .rb-features li {
+        font-size: .86rem;
+    }
+
+    .rb-visual,
+    .rb-viz-card {
+        display: none;
+    }
+
+    /* Inline flex CTAs inside spotlight */
+    .rb-spotlight>div>div[style*="display:flex"],
+    .rb-spotlight>div>div[style*="display: flex"] {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* ── HOME — Services grid ────────────────────────────────── */
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .rb-service-card {
+        min-height: 240px;
+    }
+
+    .rsc-content {
+        padding: 18px;
+    }
+
+    /* ── HOME — Intel case cards ─────────────────────────────── */
+    .intel-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .intel-card {
+        width: 100%;
+    }
+
+    .ic-body {
+        padding: 18px;
+        gap: 10px;
+    }
+
+    .ic-title {
+        font-size: .96rem;
+    }
+
+    .ic-meta {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    /* ── HOME — Tactical band (war-room map) ─────────────────── */
+    .tactical-band {
+        padding: 56px 0 !important;
+    }
+
+    .tb-content h2 {
+        font-size: clamp(1.4rem, 6vw, 1.9rem);
+    }
+
+    .tb-chip-2,
+    .tb-chip-3,
+    .tb-chip-4,
+    .tb-particles {
+        display: none;
+    }
+
+    /* ── HOME — Drone fleet image band ──────────────────────── */
+    .img-band-stats {
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .img-band-stats>div {
+        min-width: 40%;
+    }
+
+    .s-num {
+        font-size: 1.7rem;
+    }
+
+    .img-band-coords {
+        display: none;
+    }
+
+    /* ── HOME — Logo marquee ─────────────────────────────────── */
+    .lm-item {
+        height: 46px;
+    }
+
+    .lm-item img {
+        max-height: 32px;
+        max-width: 90px;
+    }
+
+    /* ── HOME — CTA band ─────────────────────────────────────── */
+    .cta-band {
+        padding: 36px 18px;
+        border-radius: 10px;
+    }
+
+    .cta-band h2 {
+        font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+        margin-bottom: 12px;
+    }
+
+    .cta-band p {
+        font-size: .9rem;
+        margin-bottom: 22px;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Generic img-band CTA buttons */
+    .img-band-inner .btn {
+        max-width: 100%;
+    }
+
+    /* Decorative fields */
+    .arsenal-field,
+    .pb-grid {
+        opacity: 0.25;
+    }
+
+    /* Cards */
+    .card {
+        padding: 18px;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       TEAM PAGE — Mobile layout
+       The .person grid becomes a centered flex column.
+       Both photo and text block are pinned to the same width
+       so name/role sit directly below the image.
+       ══════════════════════════════════════════════════════════ */
+
+    /* Turn the grid into a centered narrow column */
+    .person {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 20px !important;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        max-width: 340px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Photo fills the card width */
+    .person-photo {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Portrait crop — inline scale transforms still apply for face zoom */
+    .person-photo img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+    }
+
+    /* id-tag */
+    .id-tag {
+        font-size: .6rem;
+        letter-spacing: .12em;
+        padding: 5px 8px;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+
+    /* Text block is in the same grid column — sits directly under photo */
+    .person>div:not(.person-photo) {
+        width: 100%;
+        text-align: left;
+    }
+
+    .person h3 {
+        font-size: clamp(1.1rem, 5vw, 1.35rem);
+        margin-bottom: 4px;
+    }
+
+    .role {
+        font-size: .66rem;
+        letter-spacing: .1em;
+        margin: 4px 0 12px;
+    }
+
+    .person>div>p {
+        font-size: .9rem;
+        line-height: 1.68;
+    }
+
+    .bio {
+        margin-top: 10px;
+    }
+
+    .bio p {
+        font-size: .88rem;
+        line-height: 1.66;
+    }
+
+    details>summary {
+        font-size: .7rem;
+        padding: 8px 0;
+        cursor: pointer;
+    }
+
+    /* ── TEAM — Partner / allied card ───────────────────────── */
+    .card[style*="display: flex"],
+    .card[style*="display:flex"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: flex-start !important;
+    }
+
+    /* ── CONTACT PAGE ────────────────────────────────────────── */
+    .contact-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .map-card iframe {
+        height: 200px;
+    }
+
+    .contact-form-card {
+        padding: 20px 16px;
+    }
+
+    .contact-form {
+        gap: 14px;
+    }
+
+    .info-row {
+        gap: 12px;
+    }
+
+    /* ── PRODUCTS PAGE ───────────────────────────────────────── */
+    .rb-card {
+        padding: 24px 16px;
+    }
+
+    .rb-badge {
+        font-size: .62rem;
+        padding: 5px 10px;
+    }
+
+    .rb-headline {
+        font-size: clamp(1.4rem, 6vw, 1.9rem);
+    }
+
+    .rb-features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .rb-stats {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 20px 0;
+    }
+
+    .rb-stat {
+        align-items: flex-start;
+        padding: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .07);
+        padding-bottom: 14px;
+        width: 100%;
+    }
+
+    .rb-stat:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .rb-stat-num {
+        font-size: 1.9rem;
+    }
+
+    .rb-ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .rb-ctas .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .product-featured {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 20px 16px;
+    }
+
+    .product-featured.reverse .pf-copy {
+        order: 1;
+    }
+
+    .product-featured.reverse .pf-shot {
+        order: 2;
+    }
+
+    .pf-shot {
+        width: 100%;
+    }
+
+    .octopus-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ── RESOURCES PAGE ──────────────────────────────────────── */
+    .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 24px;
+    }
+
+    .filter-btn {
+        font-size: .66rem;
+        padding: 5px 10px;
+    }
+
+    .case-card,
+    .blog-card {
+        padding: 16px 0;
+    }
+
+    .logo-wall {
+        gap: 0;
+    }
+
+    .lw-item {
+        flex: 0 0 calc(100% / 3);
+        padding: 8px 6px;
+    }
+
+    /* ── METHODOLOGY PAGE ────────────────────────────────────── */
+    .method-item {
+        padding: 20px 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mnum {
+        font-size: 1rem;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+        padding: 48px 0 0;
+    }
+
+    .footer-grid {
+        gap: 24px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: .72rem;
+    }
+
+    .footer-logo .chip img {
+        height: 42px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SMALL MOBILE  ≤ 430px  (iPhone 14 Pro / standard 414–430px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 430px) {
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    h1 {
+        font-size: clamp(1.75rem, 8.5vw, 2.2rem);
+    }
+
+    h2 {
+        font-size: clamp(1.25rem, 6vw, 1.65rem);
+    }
+
+    h3 {
+        font-size: 1.05rem;
+    }
+
+    /* Home hero */
+    .hud-field h1 {
+        font-size: clamp(1.9rem, 9.5vw, 2.5rem);
+    }
+
+    .hero-sub {
+        font-size: .88rem;
+    }
+
+    .hero-cta .btn {
+        font-size: .68rem;
+        padding: 9px 15px;
+    }
+
+    /* Stat strip numbers */
+    .hud-field .stat b,
+    .stat b {
+        font-size: 1.4rem;
+    }
+
+    .stat span {
+        font-size: .52rem;
+    }
+
+    /* Team card — slightly narrower on small phones */
+    .person {
+        max-width: 300px !important;
+    }
+
+    .id-tag {
+        font-size: .56rem;
+        padding: 4px 7px;
+    }
+
+    .person h3 {
+        font-size: 1.05rem;
+    }
+
+    .role {
+        font-size: .62rem;
+    }
+
+    .person>div>p,
+    .bio p {
+        font-size: .86rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 9px 16px;
+        font-size: .7rem;
+    }
+
+    .cta-band {
+        padding: 28px 14px;
+    }
+
+    /* img band hero */
+    .img-band-top,
+    .premium-band,
+    .flight-band {
+        padding: 80px 0 44px !important;
+    }
+
+    /* RainBrain spotlight */
+    .rb-spotlight {
+        padding: 18px 14px 22px;
+    }
+
+    /* Logo wall — 2 per row on very small */
+    .lw-item {
+        flex: 0 0 50%;
+    }
+
+    /* Footer */
+    footer {
+        padding: 36px 0 0;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VERY SMALL  ≤ 380px
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .hud-field h1 {
+        font-size: 1.9rem;
+    }
+
+    .person {
+        max-width: 280px !important;
+    }
+
+    .hud-field .stat b,
+    .stat b {
+        font-size: 1.3rem;
+    }
+
+    .rb-stat-num {
+        font-size: 1.65rem;
+    }
+
+    .filter-btn {
+        font-size: .6rem;
+        padding: 4px 8px;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        font-size: .68rem;
+    }
+
+    .cta-band {
+        padding: 24px 12px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLET  769px – 1024px
+   ═══════════════════════════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .container {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    /* Team — tighter photo column */
+    .person {
+        grid-template-columns: 200px 1fr !important;
+        gap: 28px !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Grids: 2-col on tablet */
+    .grid-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .intel-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Products */
+    .rb-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product-featured {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    /* RainBrain spotlight — single col, hide chart */
+    .rb-spotlight {
+        grid-template-columns: 1fr;
+    }
+
+    .rb-visual {
+        display: none;
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Splits */
+    .split,
+    .split-narrow {
+        gap: 36px;
+    }
+
+    /* Footer 2-col */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    /* Logo wall — 4 per row */
+    .lw-item {
+        flex: 0 0 calc(100% / 4);
+    }
+}
