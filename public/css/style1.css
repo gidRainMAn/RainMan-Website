@@ -1213,31 +1213,15 @@ section.tight {
 
 .person-photo {
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
 }
 
 .person-photo img {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 4/5;
   object-fit: cover;
-  object-position: center 10%;
   border-radius: 10px;
   border: 1px solid var(--line);
   filter: grayscale(20%);
-}
-
-.person-photo img.shift-down {
-  object-position: center 55% !important;
-}
-
-.balu-photo {
-  padding-top: 40px;
-  background: var(--paper);
-}
-
-.balu-photo img {
-  object-position: center 20%;
 }
 
 .id-tag {
@@ -1777,8 +1761,8 @@ footer ul a:hover {
   }
 
   .person-photo img {
-    aspect-ratio: 3/4;
-    /* object-position: top center set globally — handles all face crops uniformly */
+    aspect-ratio: 4/5;
+    /* Keep inline transform values — they handle the face-crop zoom */
   }
 
   .footer-grid {
