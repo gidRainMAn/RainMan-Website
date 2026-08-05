@@ -2,7 +2,7 @@
     errors = errors || {};
 %>
 <h1>
-    <%= blog ? "Edit Blog" : "Create Blog" %>
+    <%= blog ? "Edit Resource" : "Create Resource" %>
 </h1>
 
 <form
@@ -33,6 +33,34 @@
             </small>
 
         <% } %>
+    </div>
+
+    <div class="form-group">
+
+        <label>Resource Type</label>
+
+        <select name="type">
+
+            <option
+                value="BLOG"
+                <%= blog?.type === "BLOG" ? "selected" : "" %>>
+                Blog
+            </option>
+
+            <option
+                value="CASE_STUDY"
+                <%= blog?.type === "CASE_STUDY" ? "selected" : "" %>>
+                Case Study
+            </option>
+
+            <option
+                value="WHITEPAPER"
+                <%= blog?.type === "WHITEPAPER" ? "selected" : "" %>>
+                Whitepaper
+            </option>
+
+        </select>
+
     </div>
 
     <!-- Slug -->
@@ -150,7 +178,7 @@
                 <%= blog?.featured ? "checked" : "" %>
             >
 
-            Featured Blog
+            Featured Resource
 
         </label>
 

@@ -47,9 +47,23 @@ exports.getBlog = async (id) => {
 
 };
 
-exports.getPublishedBlogs = async () => {
+// exports.getPublishedBlogs = async () => {
 
-    return blogRepository.getPublished();
+//     return blogRepository.getPublished();
+
+// };
+
+exports.getPublishedResources = (
+    type,
+    page = 1,
+    limit = 6
+) => {
+
+    return blogRepository.getPublished(
+        type,
+        page,
+        limit
+    );
 
 };
 
@@ -79,6 +93,8 @@ exports.createBlog = async (data) => {
 
         ...data,
 
+        type: data.type || "BLOG",
+
         slug,
         featured: data.featured === "true",
         publishedAt:
@@ -100,6 +116,8 @@ exports.updateBlog = async (id, data) => {
     return blogRepository.update(id, {
 
         ...data,
+
+        type: data.type || "BLOG",
 
         slug,
         featured: data.featured === "true",

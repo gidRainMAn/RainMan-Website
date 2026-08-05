@@ -18,7 +18,7 @@ exports.index = async (req, res, next) => {
 
         res.render("admin/blogs/index", {
             layout: "layouts/admin",
-            title: "Blogs",
+            title: "Resources",
             blogs,
             filters
         });
@@ -41,7 +41,7 @@ exports.createPage = async (req, res, next) => {
 
         res.render("admin/blogs/create", {
             layout: "layouts/admin",
-            title: "Create Blog",
+            title: "Create Resource",
             categories,
             blog: null,
             errors: {}
@@ -61,7 +61,7 @@ exports.create = async (req, res, next) => {
 
     try {
         const errors = validationResult(req);
-        console.log(errors.array());
+        // console.log(errors.array());
         if (!errors.isEmpty()) {
 
             const categories = await blogService.getCategories();
@@ -72,7 +72,7 @@ exports.create = async (req, res, next) => {
                 categories,
                 errors: errors.mapped(),
                 blog: req.body,
-                debug: true
+                // debug: true
             });
 
         }
@@ -111,7 +111,7 @@ exports.editPage = async (req, res, next) => {
 
             layout: "layouts/admin",
             
-            title: "Edit Blog",
+            title: "Edit Resource",
             
             blog,
             categories,
@@ -134,23 +134,62 @@ exports.update = async (req, res, next) => {
 
     try {
 
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+
+            const blog = await blogService.getBlog(req.params.id);
+
+            const categories = await blogService.getCategories();
+
+            return res.status(400).render("admin/blogs/edit", {
+
+                layout: "layouts/admin",
+
+                title: "Edit Resource",
+
+                blog: {
+
+                    ...blog,
+
+                    ...req.body
+
+                },
+
+                categories,
+
+                errors: errors.mapped()
+
+            });
+
+        }
+
         if (req.file) {
-            req.body.bannerImage = "/uploads/blogs/banners/" + req.file.filename;
+
+            req.body.bannerImage =
+                "/uploads/blogs/banners/" + req.file.filename;
+
         }
 
         await blogService.updateBlog(
+
             req.params.id,
+
             req.body
+
         );
 
         res.redirect("/admin/blogs");
 
-    } catch (error) {
+    }
+
+    catch (error) {
+
         next(error);
+
     }
 
 };
-
 // =====================================
 // Delete Blog
 // =====================================

@@ -74,22 +74,61 @@ exports.resources = async (req, res, next) => {
 
     try {
 
-        const blogs = await blogService.getPublishedBlogs();
+        const blogPage = Number(req.query.blogPage || 1);
+
+        const casePage = Number(req.query.casePage || 1);
+
+        const whitePage = Number(req.query.whitePage || 1);
+
+        const [
+
+            blogs,
+
+            caseStudies,
+
+            whitepapers
+
+        ] = await Promise.all([
+
+            blogService.getPublishedResources(
+                "BLOG",
+                blogPage,
+                6
+            ),
+
+            blogService.getPublishedResources(
+                "CASE_STUDY",
+                casePage,
+                6
+            ),
+
+            blogService.getPublishedResources(
+                "WHITEPAPER",
+                whitePage,
+                6
+            )
+
+        ]);
 
         res.render("pages/resources", {
-            title: "Resources | RainMan",
-            description:
-                "Browse blogs, case studies, whitepapers, and thought leadership from RainMan.",
-            currentPage: "resources",
-            canonical: "/resources",
-            robots: "index,follow",
 
-            blogs
+            blogs,
+
+            caseStudies,
+
+            whitepapers,
+
+            title: "Resources",
+
+            currentPage: "resources"
+
         });
 
-    } catch (error) {
+    }
 
-        next(error);
+    catch (err) {
+
+        next(err);
 
     }
 

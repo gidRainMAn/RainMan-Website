@@ -65,23 +65,47 @@ exports.getBySlug = async (slug) => {
 
 };
 
-exports.getPublished = async () => {
+exports.getPublished = async (
+    type,
+    page = 1,
+    limit = 6
+) => {
 
-    return prisma.blog.findMany({
+    const skip = (page - 1) * limit;
 
-        where: {
-            status: "PUBLISHED"
-        },
+    const where = {
+        status: "PUBLISHED",
+        type
+    };
 
-        include: {
-            category: true
-        },
+    const [items, total] = await Promise.all([
 
-        orderBy: {
-            publishedAt: "desc"
-        }
+        prisma.blog.findMany({
+            where,
+            skip,
+            take: limit,
+            orderBy: {
+                publishedAt: "desc"
+            }
+        }),
 
-    });
+        prisma.blog.count({
+            where
+        })
+
+    ]);
+
+    return {
+
+        items,
+
+        total,
+
+        page,
+
+        totalPages: Math.ceil(total / limit)
+
+    };
 
 };
 
@@ -186,7 +210,7 @@ exports.updateStatus = async (id, status) => {
 
 };
 
-exports.getFeatured = async () => {
+exports.getFeatured = async (type = "BLOG") => {
 
     return prisma.blog.findMany({
 
@@ -194,7 +218,9 @@ exports.getFeatured = async () => {
 
             status: "PUBLISHED",
 
-            featured: true
+            featured: true,
+
+            type
 
         },
 
