@@ -1,0 +1,230 @@
+.resource-header{
+
+    padding: 30px 0 15px;
+
+}
+
+.resource-header .container{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+.resource-type{
+
+    display:inline-block;
+
+    background:#f2f2f2;
+
+    color:#555;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+
+}
+
+.resource-title{
+
+    font-size:3.8rem;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    color:#111;
+
+    margin-bottom:15px;
+
+}
+
+.resource-excerpt{
+
+    font-size:1.35rem;
+
+    line-height:1.8;
+
+    color:#666;
+
+    margin-bottom:18px;
+
+}
+
+.resource-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    color:#888;
+
+    font-size:.95rem;
+
+}
+
+.resource-banner{
+
+    margin-bottom:5px;
+
+}
+
+.resource-banner .container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+.resource-banner img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:18px;
+
+    object-fit:cover;
+
+    aspect-ratio:16/9;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.15);
+
+}
+
+.resource-body{
+
+    padding-bottom:25px;
+
+}
+
+.resource-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#333;
+
+}
+
+.resource-content h2{
+
+    margin-top:40px;
+
+    margin-bottom:12px;
+
+    font-size:2.2rem;
+
+}
+
+.resource-content h3{
+
+    margin-top:30px;
+
+    margin-bottom:10px;
+
+    font-size:1.6rem;
+
+}
+
+.resource-content p{
+
+    margin-bottom:18px;
+
+}
+
+.resource-content img{
+
+    width:100%;
+
+    border-radius:14px;
+
+    margin:50px 0;
+
+}
+
+.resource-content ul,
+.resource-content ol{
+
+    margin:30px 0 30px 25px;
+
+}
+
+.resource-content li{
+
+    margin-bottom:10px;
+
+}
+
+.resource-content blockquote{
+
+    border-left:4px solid #d4a017;
+
+    padding-left:20px;
+
+    margin:40px 0;
+
+    font-style:italic;
+
+    color:#555;
+
+}
+
+.resource-content pre{
+
+    background:#1e1e1e;
+
+    color:#f5f5f5;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    overflow:auto;
+
+    margin:40px 0;
+
+}
+
+.resource-content table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:40px 0;
+
+}
+
+.resource-content table th,
+.resource-content table td{
+
+    border:1px solid #ddd;
+
+    padding:12px;
+
+}
+
+.resource-content table th{
+
+    background:#f5f5f5;
+
+}

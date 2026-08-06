@@ -57,5 +57,8 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    <% if (typeof pageCSS !== 'undefined') { %>
+        <link rel="stylesheet" href="/css/<%= pageCSS %>.css">
+    <% } %>
 
 </head>

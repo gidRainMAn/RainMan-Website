@@ -1,52 +1,11 @@
-<section class="blog-hero">
-
-    <div class="container">
-
-        <div class="eyebrow">
-
-            <%= blog.category.name %>
-
-        </div>
-
-        <h1>
-
-            <%= blog.title %>
-
-        </h1>
-
-        <p class="blog-excerpt">
-
-            <%= blog.excerpt %>
-
-        </p>
-
-        <div class="blog-meta">
-
-            RainMan
-
-            •
-
-            <%= blog.readingTime %> min read
-
-            •
-
-            <%= new Date(blog.publishedAt).toDateString() %>
-
-        </div>
-
-    </div>
-
-</section>
-
 <% if(blog.bannerImage){ %>
 
-<section>
+<section class="resource-banner">
 
     <div class="container">
 
         <img
             src="<%= blog.bannerImage %>"
-            class="blog-banner"
             alt="<%= blog.title %>">
 
     </div>
@@ -54,12 +13,62 @@
 </section>
 
 <% } %>
-
-<section>
+<section class="resource-header">
 
     <div class="container">
 
-        <article class="blog-content">
+        <div class="resource-type">
+
+            <%= blog.type.replace("_"," ") %>
+
+        </div>
+
+        <h1 class="resource-title">
+
+            <%= blog.title %>
+
+        </h1>
+
+        <% if(blog.excerpt){ %>
+
+            <p class="resource-excerpt">
+
+                <%= blog.excerpt %>
+
+            </p>
+
+        <% } %>
+
+        <div class="resource-meta">
+
+            <span>RainMan</span>
+
+            <span>•</span>
+
+            <span><%= blog.readingTime %> min read</span>
+
+            <span>•</span>
+
+            <span>
+
+                <%= new Date(blog.publishedAt).toLocaleDateString("en-US",{
+                    year:"numeric",
+                    month:"long",
+                    day:"numeric"
+                }) %>
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="resource-body">
+
+    <div class="container">
+
+        <article class="resource-content">
 
             <%- blog.contentHtml %>
 

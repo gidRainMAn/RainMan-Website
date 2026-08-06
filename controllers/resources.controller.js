@@ -37,6 +37,7 @@ exports.detail = async (req, res, next) => {
             description: blog.seoDescription || blog.excerpt,
             canonical: `/resources/${blog.slug}`,
             currentPage: "resources",
+            pageCSS: "resource-detail",
             blog
         });
 

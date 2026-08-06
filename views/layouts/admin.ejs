@@ -16,6 +16,9 @@
         rel="stylesheet"
         href="/css/admin.css"
     >
+    <% if (typeof pageCSS !== "undefined" && pageCSS) { %>
+        <link rel="stylesheet" href="/css/<%= pageCSS %>.css">
+    <% } %>
 
     <link
         href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"

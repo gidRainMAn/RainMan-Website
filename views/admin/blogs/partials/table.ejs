@@ -4,20 +4,12 @@
 
         <tr>
 
-            <th>Banner</th>
-
-            <th>Title</th>
-
+            <th>Resource</th>
             <th>Type</th>
-
             <th>Category</th>
-
             <th>Status</th>
-
             <th>Published</th>
-
             <th>Featured</th>
-
             <th>Actions</th>
 
         </tr>
@@ -26,31 +18,48 @@
 
     <tbody>
 
-    <% blogs.forEach(blog => { %>
+        <% blogs.forEach(blog => { %>
 
         <tr>
 
             <td>
 
-                <img
-                    src="<%= blog.bannerImage || '/images/no-image.png' %>"
-                    alt="<%= blog.title %>"
-                >
+                <div class="resource-info">
+
+                    <div class="resource-thumb">
+
+                        <img
+                            src="<%= blog.bannerImage || '/images/no-image.png' %>"
+                            alt="<%= blog.title %>"
+                        >
+
+                    </div>
+
+                    <div class="resource-details">
+
+                        <strong>
+
+                            <%= blog.title %>
+
+                        </strong>
+
+                        <small>
+
+                            <%= blog.slug %>
+
+                        </small>
+
+                    </div>
+
+                </div>
 
             </td>
 
             <td>
 
-                <strong><%= blog.title %></strong>
+                <span class="resource-badge">
 
-            </td>
-
-            <td>
-
-                <span class="resource-type">
-
-                    <%= (blog.type || "BLOG")
-                        .replace("_", " ") %>
+                    <%= (blog.type || "BLOG").replace("_"," ") %>
 
                 </span>
 
@@ -80,9 +89,17 @@
 
             </td>
 
-            <td>
+            <td class="featured-col">
 
-                <%= blog.featured ? "⭐ Featured" : "--" %>
+                <% if(blog.featured){ %>
+
+                    ⭐
+
+                <% } else { %>
+
+                    —
+
+                <% } %>
 
             </td>
 
@@ -93,38 +110,37 @@
                     <a
                         href="/resources/<%= blog.slug %>"
                         class="btn secondary"
-                        target="_blank"
-                    >
+                        target="_blank">
+
                         Preview
+
                     </a>
 
                     <a
                         href="/admin/blogs/edit/<%= blog.id %>"
-                        class="btn-sm primary"
-                    >
+                        class="btn-sm primary">
+
                         Edit
+
                     </a>
 
                     <form
                         action="/admin/blogs/status/<%= blog.id %>"
                         method="POST"
-                        style="display:inline;"
-                    >
+                        style="display:inline;">
 
                         <input
                             type="hidden"
                             name="status"
                             value="<%= blog.status === 'PUBLISHED'
                                 ? 'ARCHIVED'
-                                : 'PUBLISHED' %>"
-                        >
+                                : 'PUBLISHED' %>">
 
                         <button
-                            type="submit"
                             class="btn-sm success"
-                        >
+                            type="submit">
 
-                            <%= blog.status === "PUBLISHED"
+                            <%= blog.status==="PUBLISHED"
                                 ? "Archive"
                                 : "Publish" %>
 
@@ -136,13 +152,11 @@
                         action="/admin/blogs/delete/<%= blog.id %>"
                         method="POST"
                         style="display:inline;"
-                        onsubmit="return confirm('Delete this resource?');"
-                    >
+                        onsubmit="return confirm('Delete this resource?');">
 
                         <button
-                            type="submit"
                             class="btn-sm danger"
-                        >
+                            type="submit">
 
                             Delete
 
@@ -156,7 +170,7 @@
 
         </tr>
 
-    <% }) %>
+        <% }) %>
 
     </tbody>
 

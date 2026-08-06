@@ -19,6 +19,7 @@ exports.index = async (req, res, next) => {
         res.render("admin/blogs/index", {
             layout: "layouts/admin",
             title: "Resources",
+            pageCSS: "admin-blog",
             blogs,
             filters
         });
