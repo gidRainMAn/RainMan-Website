@@ -1,19 +1,19 @@
 <section class="img-band img-band-top resources-hero"
-  style="padding:0; min-height:420px; display:flex; align-items:center;">
-  <div class="resources-hero-photo"
-    style="background-image:url('/images/resources1.png'); background-position:center 35%;"></div>
-  <div class="resources-hero-tint"
-    style="background-image:linear-gradient(100deg,rgba(15,9,3,.95) 0%,rgba(16,10,4,.86) 28%,rgba(16,10,4,.55) 55%,rgba(16,10,4,.28) 78%,rgba(16,10,4,.58) 100%),radial-gradient(ellipse 120% 95% at 50% 50%,rgba(10,6,2,.15) 52%,rgba(6,4,1,.55) 100%);">
-  </div>
-  <div class="resources-hero-sweep"></div>
-  <div class="container img-band-inner" style="width:100%;">
-    <div style="max-width:560px;">
-      <div class="eyebrow" style="color:#e3c98f;">Debrief</div>
-      <h2 style="color:#fff;">How some marketing skirmishes were won through data.</h2>
-      <p style="color:rgba(255,255,255,.80);">Case studies, whitepapers and field notes drawn from RainMan's
-        intuition, experience and 15+ years of cross-category pattern recognition.</p>
+    style="padding:0; min-height:420px; display:flex; align-items:center;">
+    <div class="resources-hero-photo"
+        style="background-image:url('/images/resources1.png'); background-position:center 35%;"></div>
+    <div class="resources-hero-tint"
+        style="background-image:linear-gradient(100deg,rgba(15,9,3,.95) 0%,rgba(16,10,4,.86) 28%,rgba(16,10,4,.55) 55%,rgba(16,10,4,.28) 78%,rgba(16,10,4,.58) 100%),radial-gradient(ellipse 120% 95% at 50% 50%,rgba(10,6,2,.15) 52%,rgba(6,4,1,.55) 100%);">
     </div>
-  </div>
+    <div class="resources-hero-sweep"></div>
+    <div class="container img-band-inner" style="width:100%;">
+        <div style="max-width:560px;">
+            <div class="eyebrow" style="color:#e3c98f;">Debrief</div>
+            <h2 style="color:#fff;">How some marketing skirmishes were won through data.</h2>
+            <p style="color:rgba(255,255,255,.80);">Case studies, whitepapers and field notes drawn from RainMan's
+                intuition, experience and 15+ years of cross-category pattern recognition.</p>
+        </div>
+    </div>
 </section>
 
 <section id="case-studies">
@@ -39,7 +39,7 @@
 
             <% if(caseStudies && caseStudies.items && caseStudies.items.length){ %>
 
-                <% caseStudies.items.forEach(item => { %>
+                <% caseStudies.items.forEach(item=> { %>
 
                     <div class="card case-card">
 
@@ -59,35 +59,34 @@
 
                     </div>
 
-                <% }) %>
+                    <% }) %>
 
-            <% } else { %>
+                        <% } else { %>
 
-                <p>No Case Studies found.</p>
+                            <p>No Case Studies found.</p>
 
-            <% } %>
-
-        </div>
-
-        <% if(caseStudies.totalPages > 1){ %>
-
-        <div class="pagination">
-
-            <% for(let i=1;i<=caseStudies.totalPages;i++){ %>
-
-                <a
-                    href="/resources?casePage=<%= i %>&whitePage=<%= whitepapers.page %>&blogPage=<%= blogs.page %>"
-                    class="<%= caseStudies.page === i ? 'active' : '' %>">
-
-                    <%= i %>
-
-                </a>
-
-            <% } %>
+                            <% } %>
 
         </div>
 
-        <% } %>
+        <% if(caseStudies.totalPages> 1){ %>
+
+            <div class="pagination">
+
+                <% for(let i=1;i<=caseStudies.totalPages;i++){ %>
+
+                    <a href="/resources?casePage=<%= i %>&whitePage=<%= whitepapers.page %>&blogPage=<%= blogs.page %>"
+                        class="<%= caseStudies.page === i ? 'active' : '' %>">
+
+                        <%= i %>
+
+                    </a>
+
+                    <% } %>
+
+            </div>
+
+            <% } %>
 
     </div>
 </section>
@@ -104,7 +103,7 @@
         <div class="grid grid-3">
             <% if(whitepapers && whitepapers.items && whitepapers.items.length){ %>
 
-                <% whitepapers.items.forEach(item => { %>
+                <% whitepapers.items.forEach(item=> { %>
 
                     <div class="card">
 
@@ -124,35 +123,34 @@
 
                     </div>
 
-                <% }) %>
+                    <% }) %>
 
-            <% } else { %>
+                        <% } else { %>
 
-                <p>No Whitepapers available.</p>
+                            <p>No Whitepapers available.</p>
 
-            <% } %>
-
-        </div>
-
-        <% if(whitepapers.totalPages > 1){ %>
-
-        <div class="pagination">
-
-            <% for(let i=1;i<=whitepapers.totalPages;i++){ %>
-
-                <a
-                    href="?casePage=<%= caseStudies.page %>&whitePage=<%= i %>&blogPage=<%= blogs.page %>"
-                    class="<%= whitepapers.page === i ? 'active' : '' %>">
-
-                    <%= i %>
-
-                </a>
-
-            <% } %>
+                            <% } %>
 
         </div>
 
-        <% } %>
+        <% if(whitepapers.totalPages> 1){ %>
+
+            <div class="pagination">
+
+                <% for(let i=1;i<=whitepapers.totalPages;i++){ %>
+
+                    <a href="?casePage=<%= caseStudies.page %>&whitePage=<%= i %>&blogPage=<%= blogs.page %>"
+                        class="<%= whitepapers.page === i ? 'active' : '' %>">
+
+                        <%= i %>
+
+                    </a>
+
+                    <% } %>
+
+            </div>
+
+            <% } %>
 
     </div>
 
@@ -175,7 +173,7 @@
         </div>
         <% if(blogs && blogs.items && blogs.items.length){ %>
 
-            <% blogs.items.forEach(blog => { %>
+            <% blogs.items.forEach(blog=> { %>
 
                 <div class="blog-card">
 
@@ -197,69 +195,157 @@
 
                 </div>
 
-            <% }) %>
+                <% }) %>
 
-        <% } else { %>
+                    <% } else { %>
 
-            <p>No articles published yet.</p>
+                        <p>No articles published yet.</p>
 
-        <% } %>
+                        <% } %>
 
-        <% if(blogs.totalPages > 1){ %>
+                            <% if(blogs.totalPages> 1){ %>
 
-        <div class="pagination">
+                                <div class="pagination">
 
-            <% for(let i=1;i<=blogs.totalPages;i++){ %>
+                                    <% for(let i=1;i<=blogs.totalPages;i++){ %>
 
-                <a
-                    href="/resources?casePage=<%= i %>&whitePage=<%= whitepapers.page %>&blogPage=<%= blogs.page %>"
-                    class="<%= blogs.page === i ? 'active' : '' %>">
+                                        <a href="/resources?casePage=<%= i %>&whitePage=<%= whitepapers.page %>&blogPage=<%= blogs.page %>"
+                                            class="<%= blogs.page === i ? 'active' : '' %>">
 
-                    <%= i %>
+                                            <%= i %>
 
-                </a>
+                                        </a>
 
-            <% } %>
+                                        <% } %>
 
-        </div>
+                                </div>
 
-        <% } %>
+                                <% } %>
 
     </div>
 
 </section>
 
-<section class="bg-dim">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Field-tested</div>
-      <h2>Solutions across a variety of industries</h2>
-      <p class="muted">Our services provide solutions to marketing issues across a variety of industries. Being iterative, they draw on learnings from previous exercises, so our experience keeps adding value to your business.</p>
+<section class="bg-dim tight">
+    <div class="container">
+        <div class="section-head" style="margin-bottom:32px;">
+            <div class="eyebrow">Field-tested</div>
+            <h2>Trusted across industries</h2>
+        </div>
+        <div class="logo-marquee">
+            <div class="lm-track">
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db44515724e47_HUl-logo.png"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db463de724e01_image%2018.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4535b724dff_image%2017.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db49a7f724e3c_Tanishq_Logo%201.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4c3e9724dfc_image%201.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db42a93724df9_image%202.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db459b9724e50_Britannia_Industries_logo%202.png"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db46a74724e00_image%2015.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db47bf2724dec_image%2010.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4a741724e02_image%2011.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db47d31724dfb_image%2012.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db456a2724e05_image%2021.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4c39f724e04_image%2013.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db45707724dfe_image%2014.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4d548724dfd_image%2016.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db476b6724e03_image%2019.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db41380724e1c_image%2020.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db45b57724e3d_image%2022.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db42cff724e3f_image%2023.jpg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db46227724e40_image%2024.jpg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db43192724e41_image%2026.jpg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db43c69724e46_image%2027.jpg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db43842724e43_image%2028.jpg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db40df2724e48_image%2031.jpg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db481f5724e42_image%2030.jpg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db44515724e47_HUl-logo.png"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db463de724e01_image%2018.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4535b724dff_image%2017.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db49a7f724e3c_Tanishq_Logo%201.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4c3e9724dfc_image%201.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db42a93724df9_image%202.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db459b9724e50_Britannia_Industries_logo%202.png"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db46a74724e00_image%2015.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db47bf2724dec_image%2010.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4a741724e02_image%2011.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db47d31724dfb_image%2012.svg"
+                        alt="Client logo" loading="lazy"></div>
+                <div class="lm-item"><img
+                        src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db456a2724e05_image%2021.svg"
+                        alt="Client logo" loading="lazy"></div>
+            </div>
+        </div>
     </div>
-    <div class="logo-marquee"><div class="lm-track"><div class="lm-track"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db44515724e47_HUl-logo.png" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db463de724e01_image%2018.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4535b724dff_image%2017.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db49a7f724e3c_Tanishq_Logo%201.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4c3e9724dfc_image%201.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db42a93724df9_image%202.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db459b9724e50_Britannia_Industries_logo%202.png" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db46a74724e00_image%2015.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db47bf2724dec_image%2010.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4a741724e02_image%2011.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db47d31724dfb_image%2012.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db456a2724e05_image%2021.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4c39f724e04_image%2013.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db45707724dfe_image%2014.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db4d548724dfd_image%2016.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db476b6724e03_image%2019.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db41380724e1c_image%2020.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db45b57724e3d_image%2022.svg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db42cff724e3f_image%2023.jpg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db46227724e40_image%2024.jpg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db43192724e41_image%2026.jpg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db43c69724e46_image%2027.jpg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db43842724e43_image%2028.jpg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db40df2724e48_image%2031.jpg" alt="Client logo" loading="lazy"></div>
-<div class="lw-item"><img src="https://cdn.prod.website-files.com/6457afe9ef2db4021f724d76/6457afe9ef2db481f5724e42_image%2030.jpg" alt="Client logo" loading="lazy"></div></div>
-  </div></div>
 </section>
