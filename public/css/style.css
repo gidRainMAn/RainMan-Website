@@ -2267,6 +2267,44 @@ section.tight {
   font-size: 1.05rem;
 }
 
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px auto 0;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #444;
+    background: #fff;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.pagination a:hover {
+    background: #d4a017;
+    color: #fff;
+    border-color: #d4a017;
+    transform: translateY(-2px);
+}
+
+.pagination a.active {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
 /* ============================================================
    SECTION HELPERS
    ============================================================ */
