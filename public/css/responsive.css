@@ -14,6 +14,21 @@
         padding-right: 18px;
     }
 
+    /* ── CARDS — Always have proper padding ──────────────────── */
+    .card {
+        padding: 20px;
+    }
+
+    .card.case-card {
+        padding: 18px;
+    }
+
+    /* ── GRID — Single column on mobile ──────────────────────── */
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     /* ── Section vertical rhythm ─────────────────────────────── */
     section {
         padding: 48px 0;
@@ -649,7 +664,34 @@
 
     .case-card,
     .blog-card {
-        padding: 16px 0;
+        padding: 18px;
+    }
+
+    /* case card titles — match home page card scale, no uppercase */
+    .page-resources .case-card h3 {
+        font-size: .96rem;
+        text-transform: none;
+        letter-spacing: 0;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .page-resources .case-card p {
+        font-size: .88rem;
+        line-height: 1.65;
+    }
+
+    /* whitepaper card title */
+    .page-resources .card h3 {
+        font-size: .96rem;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    /* case card tag */
+    .page-resources .case-card .tag {
+        display: inline-block;
+        margin-bottom: 10px;
     }
 
     .logo-wall {
@@ -701,6 +743,15 @@
     .container {
         padding-left: 16px;
         padding-right: 16px;
+    }
+
+    /* ── CARDS — Maintain padding ────────────────────────────── */
+    .card {
+        padding: 16px;
+    }
+
+    .card.case-card {
+        padding: 16px;
     }
 
     section {
@@ -837,6 +888,25 @@
     .filter-btn {
         font-size: .6rem;
         padding: 4px 8px;
+    }
+
+    /* ── CARDS — Extra small screens ─────────────────────────── */
+    .card {
+        padding: 14px;
+    }
+
+    .card.case-card {
+        padding: 14px;
+    }
+
+    /* ensure case cards have proper padding on very small screens */
+    .case-card,
+    .blog-card {
+        padding: 14px;
+    }
+
+    .page-resources .case-card h3 {
+        font-size: .9rem;
     }
 
     .btn {
