@@ -209,12 +209,10 @@
 
                                     <% for(let i=1;i<=blogs.totalPages;i++){ %>
 
-                                        <a href="/resources?casePage=<%= i %>&whitePage=<%= whitepapers.page %>&blogPage=<%= blogs.page %>"
-                                            class="<%= blogs.page === i ? 'active' : '' %>">
-
-                                            <%= i %>
-
-                                        </a>
+                                    <a href="/resources?casePage=<%= caseStudies.page %>&whitePage=<%= whitepapers.page %>&blogPage=<%= i %>"
+                                        class="<%= blogs.page === i ? 'active' : '' %>">
+                                        <%= i %>
+                                    </a>
 
                                         <% } %>
 
