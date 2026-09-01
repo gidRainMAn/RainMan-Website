@@ -1,20 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contactForm");
-    const button = document.getElementById("contactSubmit");
-    const status = document.getElementById("contactStatus");
+
+    const form = document.getElementById("rainbrainTrialForm");
+    const button = document.getElementById("rainbrainTrialSubmit");
+    const status = document.getElementById("rainbrainTrialStatus");
 
     if (!form || !button || !status) return;
 
     form.addEventListener("submit", async (event) => {
+
         event.preventDefault();
 
+        status.style.display = "none";
         status.textContent = "";
-        status.className = "contact-status";
 
         button.disabled = true;
         button.textContent = "Sending...";
 
         try {
+
             const formData = new FormData(form);
 
             const response = await fetch(form.action, {
@@ -29,27 +32,36 @@ document.addEventListener("DOMContentLoaded", () => {
             const result = await response.json();
 
             if (!response.ok) {
-                throw new Error(result.message || "Unable to send message");
+                throw new Error(
+                    result.message || "Unable to send request"
+                );
             }
 
             status.textContent =
-                "Thank you! Your message has been sent. We'll get back to you shortly.";
+                "Thanks! Your trial request has been received. We'll be in touch shortly.";
 
-            status.classList.add("success");
+            status.style.display = "block";
+            status.style.color = "var(--green-d)";
 
             form.reset();
 
         } catch (error) {
-            console.error("Contact form error:", error);
+
+            console.error("RainBrain trial form error:", error);
 
             status.textContent =
-                "Sorry, we couldn't send your message. Please email info@therainman.in directly.";
+                "Sorry, we couldn't send your request. Please contact info@therainman.in directly.";
 
-            status.classList.add("error");
+            status.style.display = "block";
+            status.style.color = "#c0392b";
 
         } finally {
+
             button.disabled = false;
-            button.textContent = "Send message";
+            button.textContent = "Send me the trial link";
+
         }
+
     });
+
 });

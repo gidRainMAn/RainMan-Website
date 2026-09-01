@@ -161,33 +161,37 @@
         Send us a message
       </h3>
 
-      <form class="contact-form" onsubmit="return false;">
-
+      <!-- <form class="contact-form" onsubmit="return false;"> -->
+      <form class="contact-form" id="contactForm" method="POST" action="/contact">
         <div>
           <label for="name">Name</label>
-          <input id="name" type="text" placeholder="Your full name" required>
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
         </div>
 
         <div>
           <label for="email">Email</label>
-          <input id="email" type="email" placeholder="you@company.com" required>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required>
         </div>
 
         <div>
           <label for="company">Company</label>
-          <input id="company" type="text" placeholder="Company name">
+          <input id="company" name="company" type="text" placeholder="Company name">
         </div>
 
         <div>
           <label for="message">Message</label>
-          <textarea id="message"
-            placeholder="Tell us about your data, your question, or which product you'd like to see.">
-          </textarea>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell us about your data, your question, or which product you'd like to see."
+          ></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" id="contactSubmit">
           Send message
         </button>
+
+        <div id="contactStatus" class="contact-status" role="status" aria-live="polite"></div>
 
       </form>
 
@@ -195,3 +199,4 @@
 
   </div>
 </section>
+<script src="/js/contact.js"></script>

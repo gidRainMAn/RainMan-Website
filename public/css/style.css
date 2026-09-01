@@ -2357,6 +2357,26 @@ section.tight {
   border-radius: 50%;
 }
 
+.contact-status {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 21px;
+}
+
+.contact-status.success {
+    color: #8FE3A8;
+}
+
+.contact-status.error {
+    color: #ff8f8f;
+}
+
+.contact-form button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
 /* ============================================================
    RAINBRAIN SPOTLIGHT (homepage)
    ============================================================ */

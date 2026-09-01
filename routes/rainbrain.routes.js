@@ -1,5 +1,10 @@
 const express = require("express");
+
 const router = express.Router();
+
+const {
+    requestTrial
+} = require("../controllers/rainbrainController");
 
 router.get("/", (req, res) => {
     // console.log("RAINBRAIN COMPARE 1");
@@ -35,5 +40,8 @@ router.get("/who-its-for", (req, res) => {
         layout: false
     });
 });
+
+// RainBrain trial request
+router.post("/trial", requestTrial);
 
 module.exports = router;

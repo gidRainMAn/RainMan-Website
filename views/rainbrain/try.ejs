@@ -219,16 +219,69 @@ footer.site .legal{border-top:1px solid #20272e;margin-top:34px;padding-top:18px
 <p style="margin-top:22px;color:var(--slate)">Prefer to talk first? <a href="/contact" target="_blank" rel="noopener">Contact the RainMan team &#8599;</a></p>
 </div>
 
-<form class="form" onsubmit="document.getElementById('done').style.display='block';return false;">
-<h3 style="margin-top:0">Request trial access</h3>
-<div class="row"><div><label>First name</label><input required placeholder="Priya"></div>
-<div><label>Last name</label><input required placeholder="Sharma"></div></div>
-<label>Work email</label><input type="email" required placeholder="you@company.com">
-<label>Company</label><input required placeholder="Company">
-<label>What do you want to measure? (optional)</label><textarea rows="3" placeholder="e.g. ROI across TV, digital and trade for our CPG portfolio"></textarea>
-<button class="btn btn-green" type="submit" style="margin-top:18px;width:100%">Send me the trial link</button>
-<p id="done" style="display:none;color:var(--green-d);font-weight:600;margin-top:14px">Thanks! This is a demo form — connect it to your CRM or RainMan&#39;s contact flow to go live.</p>
-<p style="color:var(--slate);font-size:.82rem;margin-top:10px">By requesting access you agree to be contacted by the RainMan team about RainBrain.</p>
+<form class="form" id="rainbrainTrialForm" method="POST" action="/rainbrain/trial">
+
+  <h3 style="margin-top:0">Request trial access</h3>
+
+  <div class="row">
+    <div>
+      <label for="firstName">First name</label>
+      <input
+        id="firstName"
+        name="firstName"
+        required
+        placeholder="Priya">
+    </div>
+
+    <div>
+      <label for="lastName">Last name</label>
+      <input
+        id="lastName"
+        name="lastName"
+        required
+        placeholder="Sharma">
+    </div>
+  </div>
+
+  <label for="trialEmail">Work email</label>
+  <input
+    id="trialEmail"
+    name="email"
+    type="email"
+    required
+    placeholder="you@company.com">
+
+  <label for="trialCompany">Company</label>
+  <input
+    id="trialCompany"
+    name="company"
+    required
+    placeholder="Company">
+
+  <label for="measure">What do you want to measure? (optional)</label>
+  <textarea
+    id="measure"
+    name="measure"
+    rows="3"
+    placeholder="e.g. ROI across TV, digital and trade for our CPG portfolio"></textarea>
+
+  <button
+    class="btn btn-green"
+    id="rainbrainTrialSubmit"
+    type="submit"
+    style="margin-top:18px;width:100%">
+    Send me the trial link
+  </button>
+
+  <p
+    id="rainbrainTrialStatus"
+    style="display:none;font-weight:600;margin-top:14px">
+  </p>
+
+  <p style="color:var(--slate);font-size:.82rem;margin-top:10px">
+    By requesting access you agree to be contacted by the RainMan team about RainBrain.
+  </p>
+
 </form>
 </div></div></section>
 <footer class="site"><div class="wrap">
@@ -266,4 +319,5 @@ footer.site .legal{border-top:1px solid #20272e;margin-top:34px;padding-top:18px
     <a href="/products" style="color:rgba(255,255,255,.6);">All products ↗</a>
   </p>
 </div>
+<script src="/js/rainbrain-trial.js"></script>
 </body></html>

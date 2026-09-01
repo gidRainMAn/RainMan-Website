@@ -11,6 +11,7 @@ const session = require("express-session");
 const indexRoutes = require("./routes");
 const adminRoutes = require("./routes/admin.routes");
 const rainbrainRoutes = require("./routes/rainbrain.routes");
+const contactRoutes = require("./routes/contactRoutes");
 
 // Load Environment Variables
 dotenv.config();
@@ -86,6 +87,8 @@ app.use("/", indexRoutes);
 app.use("/admin", adminRoutes);
 
 app.use("/rainbrain", rainbrainRoutes);
+
+app.use("/", contactRoutes);
 // ==========================
 // 404 Page - Page Not Found
 // ==========================
