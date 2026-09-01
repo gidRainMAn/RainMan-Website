@@ -17,7 +17,7 @@ dist/
 build/
 
 # Uploaded Files (optional - see note below)
-public/uploads/
+# public/uploads/
 
 # OS
 .DS_Store
