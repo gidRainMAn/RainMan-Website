@@ -88,7 +88,7 @@ app.use("/admin", adminRoutes);
 
 app.use("/rainbrain", rainbrainRoutes);
 
-app.use("/", contactRoutes);
+// app.use("/", contactRoutes);
 // ==========================
 // 404 Page - Page Not Found
 // ==========================
