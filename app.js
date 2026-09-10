@@ -19,6 +19,8 @@ dotenv.config();
 // Initialize Express App
 const app = express();
 
+app.set("trust proxy", 1);
+
 // ==========================
 // App Configuration
 // ==========================
@@ -88,7 +90,7 @@ app.use("/admin", adminRoutes);
 
 app.use("/rainbrain", rainbrainRoutes);
 
-// app.use("/", contactRoutes);
+app.use("/", contactRoutes);
 // ==========================
 // 404 Page - Page Not Found
 // ==========================

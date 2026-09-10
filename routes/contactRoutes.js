@@ -5,6 +5,8 @@ const {
     sendContactEmail
 } = require("../controllers/contactsController");
 
-router.post("/contact", sendContactEmail);
+const contactRateLimiter = require("../middleware/contactRateLimiter");
+
+router.post("/contact", contactRateLimiter, sendContactEmail);
 
 module.exports = router;

@@ -140,6 +140,7 @@ exports.contact = (req, res) => {
         description:
             "Get in touch with RainMan to discuss your marketing analytics and decision intelligence needs.",
         currentPage: "contact",
+        pageCSS: "contact",
         canonical: "/contact",
         robots: "index,follow",
     });
